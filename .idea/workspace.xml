@@ -4,7 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d02309d3-7c2a-4564-a3da-62178968c33e" name="Changes" comment="" />
+    <list default="true" id="d02309d3-7c2a-4564-a3da-62178968c33e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Cursada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Cursada.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/EstadoState/CursadaAprobada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/EstadoState/CursadaAprobada.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/EstadoState/CursadaDesaprobada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/EstadoState/CursadaDesaprobada.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/EstadoState/EstadoCursada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/EstadoState/EstadoCursada.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/EstadoState/Inscripto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/EstadoState/Inscripto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/EstadoState/ParcialAprobado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/EstadoState/ParcialAprobado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/EstadoState/ParcialDesaprobado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/EstadoState/ParcialDesaprobado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/EstadoState/Promocionada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/EstadoState/Promocionada.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Estudiante.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Estudiante.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/InscripcionStrategy/CondicionA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/InscripcionStrategy/CondicionA.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/InscripcionStrategy/CondicionB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/InscripcionStrategy/CondicionB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/InscripcionStrategy/CondicionC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/InscripcionStrategy/CondicionC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/InscripcionStrategy/CondicionD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/InscripcionStrategy/CondicionD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/InscripcionStrategy/CondicionInscripcion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/InscripcionStrategy/CondicionInscripcion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/PlanDeEstudio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/PlanDeEstudio.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,25 +44,28 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "SebaaM"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;SebaaM&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings"><![CDATA[{
   "selectedUrlAndAccountId": {
-    "url": "https://github.com/SebaaM/Universidad-patrones.git",
+    "url": "https://github.com/SebaaM/Universidad-tpi-patrones.git",
     "accountId": "d64c9b99-e522-48e8-9541-986624310fff"
   }
 }]]></component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="38RQULMJbI0g4Vka8lcMU3uZxfc" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -57,6 +77,8 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true"
   }
 }]]></component>
@@ -80,8 +102,24 @@
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="6fec6fd8-447c-40da-bc21-a9ee34076aee" value="TOOL_WINDOW" />
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
+        <entry key="6fec6fd8-447c-40da-bc21-a9ee34076aee">
+          <value>
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State />

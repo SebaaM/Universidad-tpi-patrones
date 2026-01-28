@@ -1,4 +1,10 @@
 package Model.InscripcionStrategy;
 
-public class CondicionC {
+import Model.PlanDeEstudio;
+
+public class CondicionC implements CondicionInscripcion{
+    @Override
+    public boolean revisarCondicion(PlanDeEstudio plan) {
+        return false;
+    }
 }

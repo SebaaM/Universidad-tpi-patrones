@@ -2,6 +2,8 @@ package Model.EstadoState;
 
 public class CursadaAprobada extends EstadoCursada {
 
-    public CursadaAprobada(){}
+    public CursadaAprobada(){
+        System.out.println("cursada aprobada");
+    }
 
 }

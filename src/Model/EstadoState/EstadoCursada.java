@@ -1,23 +1,32 @@
 package Model.EstadoState;
 
+import Model.Cursada;
+
 public abstract class EstadoCursada {
 
-    public void cargarParcial(){
+    public void cargarParcial(double nota, Cursada cursada){
         System.out.println("no se puede cargar Parcial en el estado actual");
     }
 
-    public void finalizarCursada() {
+    public void finalizarCursada(Cursada cursada) {
         System.out.println("no se puede finalizar la cursada en el estado actual.");
     }
 
-    public void cargarNotaFinal() {
+    public void cargarNotaFinal(double notaFinal, Cursada cursada) {
         System.out.println("no se puede cargar nota en el estado actual.");
     }
 
 
     public boolean cursadaTerminada (EstadoCursada estadoActual) {
         // metodo probado.
-        return estadoActual.getClass().getName().contains("CursadaAprobada");
+        if  (estadoActual.getClass().getName().contains("CursadaAprobada")){
+        return true;
+        }
+        else {
+            // chequear.
+            System.out.println("la materia se encuentra en el estado" + estadoActual.getClass().getName());
+            return false;
+        }
         /*
         EstadoCursada e = new CursadaAprobada();
         System.out.println(e.cursadaTerminada(e));
