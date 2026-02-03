@@ -3,12 +3,16 @@ package Model;
 import Model.EstadoState.EstadoCursada;
 import Model.EstadoState.Inscripto;
 
-public class Cursada {
+import java.util.Date;
 
+public class Cursada {
+    private Materia materia;
+    private int anioCursada;
     private EstadoCursada estado;
 
     public Cursada() {
         this.estado = new Inscripto();
+        this.anioCursada = new Date().getYear() + 1900;
     }
 
     public void setEstado(EstadoCursada estado) {
@@ -30,4 +34,6 @@ public class Cursada {
     public boolean cursadaTerminada() {
         return this.estado.cursadaTerminada(this.estado);
     }
+
+
 }
