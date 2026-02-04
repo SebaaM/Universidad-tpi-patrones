@@ -1,5 +1,7 @@
 package Model;
 
+import Model.BuilderPlan.Builder;
+import Model.InscripcionStrategy.CondicionInscripcion;
 import Model.InscripcionStrategy.DirectorStrategy;
 
 import java.util.ArrayList;
@@ -7,21 +9,16 @@ import java.util.List;
 
 public class PlanDeEstudio {
 
-    private Integer cantObligatorias;
     private Integer cantOpcionales;
     private List<Materia> materiasOptativas = new ArrayList<>();
     private List<Materia> materiasObligatorias = new ArrayList<>();
-    private DirectorStrategy directorStrategy;
+    private CondicionInscripcion condicionInscripcion ;
+    //private DirectorStrategy directorStrategy;
+    private DirectorBuilder directorBuilder;
 
     public PlanDeEstudio() {
-    }
-
-    public Integer getCantObligatorias() {
-        return cantObligatorias;
-    }
-
-    public void setCantObligatorias(Integer cantObligatorias) {
-        this.cantObligatorias = cantObligatorias;
+        // setear estrategia por defecto
+        // setear builder por defecto ??
     }
 
     public Integer getCantOpcionales() {
@@ -48,12 +45,13 @@ public class PlanDeEstudio {
         this.materiasObligatorias = materiasObligatorias;
     }
 
-    public DirectorStrategy getDirectorStrategy() {
-        return directorStrategy;
+    public CondicionInscripcion getCondicionInscripcion() {
+        return this.condicionInscripcion;
     }
 
-    public void setDirectorStrategy(DirectorStrategy directorStrategy) {
-        this.directorStrategy = directorStrategy;
+    public void setCondicionInscripcion(CondicionInscripcion cond) {
+        this.condicionInscripcion = cond;
+
     }
 
     public void agregarMateriaOptativa(Materia materia) {
@@ -72,7 +70,30 @@ public class PlanDeEstudio {
         materiasOptativas.remove(materia);
     }
 
+    public class DirectorBuilder{
+        Builder builder;
 
+        public DirectorBuilder(Builder b) {
+            this.builder = b;
+        }
+
+        public void cambiarBuilder(Builder b){
+            this.builder = b;
+        }
+
+        public PlanDeEstudio crearPlan(){
+            builder.setMateriasObligatorias();
+            builder.setEstrategiaInscripcion();
+            builder.setOptativasMinimas();
+            builder.setMateriasOptativas();
+
+            return this.builder.devolverResultado();
+
+        }
+
+
+
+    }
 
 
 }

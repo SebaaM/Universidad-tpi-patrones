@@ -7,10 +7,12 @@ public class Materia {
     private List <Materia> correlativas;
     private String nombre;
     private Integer id;
+    private int cuatrimestre;
 
-    public Materia(String nombre, Integer id) {
+    public Materia(String nombre, Integer id, int cuatrimestre) {
         this.nombre = nombre;
         this.id = id;
+        this.cuatrimestre = cuatrimestre;
         this.correlativas = new ArrayList<Materia>();
     }
 
