@@ -1,5 +1,7 @@
 package Model.InscripcionStrategy;
 
+import Model.Estudiante;
+import Model.Materia;
 import Model.PlanDeEstudio;
 
 /*
@@ -19,11 +21,11 @@ public class DirectorStrategy {
         this.strategy = strategy;
     }
 
-    public boolean revisarInscripcion(PlanDeEstudio plan){
+    public boolean revisarInscripcion(PlanDeEstudio plan, Materia mat, Estudiante est){
         if(strategy == null){
             // sacar el seteo nulo.
             throw new RuntimeException("No se ha seleccionado una estrategia de inscripcion");
         }
-        return strategy.revisarCondicion(plan);
+        return strategy.revisarCondicion(plan,mat, est);
     }
 }
