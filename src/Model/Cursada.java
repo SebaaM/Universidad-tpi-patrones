@@ -10,7 +10,8 @@ public class Cursada {
     private Materia materia;
     private int anioCursada;
     private EstadoCursada estado;
-    private boolean cursadaAprobada;
+    private boolean cursadaAprobada; // aprobo solo parcial / cursada sin final.
+    private boolean cursadaAprobadaTotal; // refiere a si rindio final / promocion
 
 
     public Cursada(Materia m) {
@@ -24,11 +25,22 @@ public class Cursada {
         this.materia = m;
         this.estado = new Inscripto();
         this.cursadaAprobada = false;
+        this.cursadaAprobadaTotal = false;
         this.anioCursada = anio;
     }
 
 
     // cambio de State
+
+
+    public boolean isCursadaAprobadaTotal() {
+        return cursadaAprobadaTotal;
+    }
+
+    public void setCursadaAprobadaTotal(boolean cursadaAprobadaTotal) {
+        this.cursadaAprobadaTotal = cursadaAprobadaTotal;
+    }
+
     public void setEstado(EstadoCursada estado) {
         this.estado = estado;
     }

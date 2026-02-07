@@ -10,8 +10,10 @@ public class ParcialAprobado extends EstadoCursada{
     @Override
     public void cargarNotaFinal(double notaFinal, Cursada cursada) {
         if (notaFinal >= 4) {
+            cursada.setCursadaAprobadaTotal(true);
             cursada.setEstado(new CursadaAprobada(cursada));
         } else {
+            
             cursada.setEstado(new CursadaDesaprobada(cursada));
         }
     }

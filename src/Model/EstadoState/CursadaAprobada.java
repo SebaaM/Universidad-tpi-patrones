@@ -6,6 +6,7 @@ public class CursadaAprobada extends EstadoCursada {
 
     public CursadaAprobada(Cursada cursada){
         cursada.setCursadaAprobada(true);
+        cursada.setCursadaAprobadaTotal(true);
         // imprimir datos de la materia?
         System.out.println("Cursada aprobada");
     }
