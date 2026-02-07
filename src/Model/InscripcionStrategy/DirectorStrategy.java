@@ -11,6 +11,7 @@ public class DirectorStrategy {
 
     public DirectorStrategy() {
         // setear estrategia predeterminada?
+        // sacar el null
         this.strategy = null;
     }
 
@@ -20,6 +21,7 @@ public class DirectorStrategy {
 
     public boolean revisarInscripcion(PlanDeEstudio plan){
         if(strategy == null){
+            // sacar el seteo nulo.
             throw new RuntimeException("No se ha seleccionado una estrategia de inscripcion");
         }
         return strategy.revisarCondicion(plan);

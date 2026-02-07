@@ -82,12 +82,13 @@ public class PlanDeEstudio {
         }
 
         public PlanDeEstudio crearPlan(){
-            builder.setMateriasObligatorias();
-            builder.setEstrategiaInscripcion();
-            builder.setOptativasMinimas();
-            builder.setMateriasOptativas();
 
-            return this.builder.devolverResultado();
+//            builder.setMateriasObligatorias();
+//            builder.setEstrategiaInscripcion();
+//            builder.setOptativasMinimas();
+//            builder.setMateriasOptativas();
+
+            return this.builder.devolverPlan();
 
         }
 
