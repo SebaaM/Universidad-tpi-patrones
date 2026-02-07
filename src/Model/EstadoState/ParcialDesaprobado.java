@@ -3,7 +3,7 @@ package Model.EstadoState;
 import Model.Cursada;
 
 public class ParcialDesaprobado extends EstadoCursada{
-    public ParcialDesaprobado(Cursada cursada) {
+    public ParcialDesaprobado() {
         System.out.println("Parcial Desaprobado");
     }
 

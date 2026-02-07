@@ -3,7 +3,7 @@ package Model.EstadoState;
 import Model.Cursada;
 
 public class Promocionada extends EstadoCursada{
-    public Promocionada(Cursada c) {
+    public Promocionada() {
         System.out.println("Cursada Promocionada");
 
     }

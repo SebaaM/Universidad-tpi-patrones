@@ -13,10 +13,18 @@ public class Cursada {
     private boolean cursadaAprobada;
 
 
-    public Cursada() {
+    public Cursada(Materia m) {
+        this.materia = m;
         this.estado = new Inscripto();
         this.cursadaAprobada = false;
         this.anioCursada = new Date().getYear() + 1900;
+    }
+
+    public Cursada(Materia m, int anio){
+        this.materia = m;
+        this.estado = new Inscripto();
+        this.cursadaAprobada = false;
+        this.anioCursada = anio;
     }
 
 

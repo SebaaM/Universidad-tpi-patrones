@@ -4,16 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d02309d3-7c2a-4564-a3da-62178968c33e" name="Changes" comment="Se agrego logica del builder, se elimino la clase DirectorPlanBuilder ya que es una inner class de Plan de Estudio.">
+    <list default="true" id="d02309d3-7c2a-4564-a3da-62178968c33e" name="Changes" comment="Se agrego logica y cambios de estados del patron State.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Cursada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Cursada.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/EstadoState/CursadaAprobada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/EstadoState/CursadaAprobada.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/EstadoState/CursadaDesaprobada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/EstadoState/CursadaDesaprobada.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/EstadoState/EstadoCursada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/EstadoState/EstadoCursada.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/EstadoState/Inscripto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/EstadoState/Inscripto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/EstadoState/ParcialAprobado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/EstadoState/ParcialAprobado.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/EstadoState/ParcialDesaprobado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/EstadoState/ParcialDesaprobado.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/EstadoState/Promocionada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/EstadoState/Promocionada.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/InscripcionStrategy/CondicionA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/InscripcionStrategy/CondicionA.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/InscripcionStrategy/CondicionB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/InscripcionStrategy/CondicionB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/InscripcionStrategy/CondicionC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/InscripcionStrategy/CondicionC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/InscripcionStrategy/CondicionD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/InscripcionStrategy/CondicionD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/InscripcionStrategy/CondicionE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/InscripcionStrategy/CondicionE.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/InscripcionStrategy/DirectorStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/InscripcionStrategy/DirectorStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/PlanDeEstudio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/PlanDeEstudio.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +126,15 @@
       <option name="project" value="LOCAL" />
       <updated>1770167270237</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Se agrego logica y cambios de estados del patron State.">
+      <option name="closed" value="true" />
+      <created>1770479361713</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1770479361713</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -143,6 +154,7 @@
     <MESSAGE value="Se agrego el modelo del proyecto" />
     <MESSAGE value="Mejora de Strategy" />
     <MESSAGE value="Se agrego logica del builder, se elimino la clase DirectorPlanBuilder ya que es una inner class de Plan de Estudio." />
-    <option name="LAST_COMMIT_MESSAGE" value="Se agrego logica del builder, se elimino la clase DirectorPlanBuilder ya que es una inner class de Plan de Estudio." />
+    <MESSAGE value="Se agrego logica y cambios de estados del patron State." />
+    <option name="LAST_COMMIT_MESSAGE" value="Se agrego logica y cambios de estados del patron State." />
   </component>
 </project>
