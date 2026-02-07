@@ -6,18 +6,51 @@ import Model.EstadoState.Inscripto;
 import java.util.Date;
 
 public class Cursada {
+
     private Materia materia;
     private int anioCursada;
     private EstadoCursada estado;
+    private boolean cursadaAprobada;
+
 
     public Cursada() {
         this.estado = new Inscripto();
+        this.cursadaAprobada = false;
         this.anioCursada = new Date().getYear() + 1900;
     }
 
+
+    // cambio de State
     public void setEstado(EstadoCursada estado) {
         this.estado = estado;
     }
+
+    public Materia getMateria() {
+        return materia;
+    }
+
+    public void setMateria(Materia materia) {
+        this.materia = materia;
+    }
+
+    public int getAnioCursada() {
+        return anioCursada;
+    }
+
+    public void setAnioCursada(int anioCursada) {
+        this.anioCursada = anioCursada;
+    }
+
+    public EstadoCursada getEstado() {
+        return estado;
+    }
+
+
+    public void setCursadaAprobada(boolean cursadaAprobada) {
+        this.cursadaAprobada = cursadaAprobada;
+    }
+
+    // METODOS
 
     public void cargarParcial(double nota) {
         this.estado.cargarParcial(nota, this);
@@ -31,9 +64,10 @@ public class Cursada {
         this.estado.cargarNotaFinal(nota, this);
     }
 
-    public boolean cursadaTerminada() {
-        return this.estado.cursadaTerminada(this.estado);
+    public boolean isCursadaAprobada() {
+        return cursadaAprobada;
     }
+
 
 
 }

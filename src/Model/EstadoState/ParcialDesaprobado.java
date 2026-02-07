@@ -3,8 +3,12 @@ package Model.EstadoState;
 import Model.Cursada;
 
 public class ParcialDesaprobado extends EstadoCursada{
-    public ParcialDesaprobado() {
+    public ParcialDesaprobado(Cursada cursada) {
         System.out.println("Parcial Desaprobado");
     }
-    // cambiar a estado Cursada Desaprobada?
+
+    @Override
+    public void finalizarCursada(Cursada cursada){
+        cursada.setEstado(new CursadaDesaprobada(cursada));
+    }
 }

@@ -4,13 +4,8 @@ import Model.Cursada;
 
 public class CursadaDesaprobada extends EstadoCursada{
 
-    public CursadaDesaprobada() {
+    public CursadaDesaprobada(Cursada c) {
         System.out.println("Cursada Desaprobada");
+        c.setCursadaAprobada(false);
     }
-
-    @Override
-    public void finalizarCursada(Cursada cursada) {
-        cursada.setEstado(new CursadaDesaprobada());
-    }
-
 }
