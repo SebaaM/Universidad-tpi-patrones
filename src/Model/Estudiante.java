@@ -1,6 +1,8 @@
 package Model;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class Estudiante {
     private String nombre;
@@ -47,8 +49,20 @@ public class Estudiante {
         this.cursadasInscriptas = cursadasInscriptas;
     }
 
-    @Override
+    // retorna las cursadas de los ultimos cuatrimestres
+    // cuatrimestreActual es el cuatrimestre de la materia que se quiere inscribir
+    // cantidad es la cantidad de cuatrimestres previos a la materia que se quiere inscribir
+    public List<Cursada> cursadasDeUltimosCuatrimestres(int cuatrimestreActual, int cantidad) {
+        int cuatrimestreMinino = cuatrimestreActual - cantidad;
+        return cursadasInscriptas.stream()
+                .filter(c -> c.getMateria().getCuatrimestre() >= cuatrimestreMinino
+                        && c.getMateria().getCuatrimestre() < cuatrimestreActual)
+                .collect(Collectors.toList());
+    }
 
+
+
+    @Override
     public String toString() {
         return nombre + " " + apellido;
     }

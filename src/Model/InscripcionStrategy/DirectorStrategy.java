@@ -26,6 +26,7 @@ public class DirectorStrategy {
             // sacar el seteo nulo.
             throw new RuntimeException("No se ha seleccionado una estrategia de inscripcion");
         }
+
         return strategy.revisarCondicion(plan,mat, est);
     }
 }

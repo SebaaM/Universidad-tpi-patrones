@@ -44,11 +44,6 @@ public class Carrera {
                 '}';
     }
 
-    public class DirectorBuilder implements Builder {
-        
-
-
-    }
 
 }
 

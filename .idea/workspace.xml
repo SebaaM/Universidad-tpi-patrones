@@ -4,20 +4,41 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d02309d3-7c2a-4564-a3da-62178968c33e" name="Changes" comment="se ajustaron los metodos que no se utilizan segun el modelo de clases">
+    <list default="true" id="d02309d3-7c2a-4564-a3da-62178968c33e" name="Changes" comment="reestructuracion de la interfaz CondicionInscripcion">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Cursada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Cursada.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/EstadoState/CursadaAprobada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/EstadoState/CursadaAprobada.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/EstadoState/Inscripto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/EstadoState/Inscripto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/EstadoState/ParcialAprobado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/EstadoState/ParcialAprobado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/EstadoState/Promocionada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/EstadoState/Promocionada.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TPI-OBJETOS/GuiUniversidad.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TPI-OBJETOS/GuiUniversidad.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/BuilderPlan/Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/BuilderPlan/Builder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/BuilderPlan/DirectorPlanEstudioBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/BuilderPlan/PlanBuildA.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/BuilderPlan/PlanBuildA.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/Carrera.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/Carrera.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/Cursada.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/Cursada.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/EstadoState/CursadaAprobada.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/EstadoState/CursadaAprobada.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/EstadoState/CursadaDesaprobada.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/EstadoState/CursadaDesaprobada.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/EstadoState/EstadoCursada.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/EstadoState/EstadoCursada.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/EstadoState/Inscripto.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/EstadoState/Inscripto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/EstadoState/ParcialAprobado.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/EstadoState/ParcialAprobado.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/EstadoState/ParcialDesaprobado.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/EstadoState/ParcialDesaprobado.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/EstadoState/Promocionada.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/EstadoState/Promocionada.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/Estudiante.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/Estudiante.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/InscripcionStrategy/CondicionA.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/InscripcionStrategy/CondicionA.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/InscripcionStrategy/CondicionB.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/InscripcionStrategy/CondicionB.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/InscripcionStrategy/CondicionC.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/InscripcionStrategy/CondicionC.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/InscripcionStrategy/CondicionD.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/InscripcionStrategy/CondicionD.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/InscripcionStrategy/CondicionInscripcion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/InscripcionStrategy/CondicionInscripcion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/Materia.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/Materia.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/PlanDeEstudio.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/PlanDeEstudio.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/Universidad.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/Universidad.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GuiUniversidad.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/GuiUniversidad.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GuiUniversidad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GuiUniversidad.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Carrera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Carrera.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Estudiante.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Estudiante.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/InscripcionStrategy/CondicionA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/InscripcionStrategy/CondicionA.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/InscripcionStrategy/CondicionB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/InscripcionStrategy/CondicionB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/InscripcionStrategy/CondicionC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/InscripcionStrategy/CondicionC.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/InscripcionStrategy/CondicionD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/InscripcionStrategy/CondicionD.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/InscripcionStrategy/CondicionE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/InscripcionStrategy/CondicionE.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/InscripcionStrategy/CondicionInscripcion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/InscripcionStrategy/CondicionInscripcion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/InscripcionStrategy/DirectorStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/InscripcionStrategy/DirectorStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Materia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Materia.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/PlanDeEstudio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/PlanDeEstudio.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -71,16 +92,35 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.GuiUniversidad.executor": "Run",
     "Application.das.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW": "true",
+    "UI_DESIGNER_EDITOR_MODE.PaletteManager.STATE": "right",
+    "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "179",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.STATE": "left",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="GuiUniversidad" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="GuiUniversidad" />
+      <module name="TPI-OBJETOS" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.GuiUniversidad" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="d02309d3-7c2a-4564-a3da-62178968c33e" name="Changes" comment="" />
@@ -145,7 +185,31 @@
       <option name="project" value="LOCAL" />
       <updated>1770483657818</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="se agrego la condicion de aprobado de final">
+      <option name="closed" value="true" />
+      <created>1770493118294</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1770493118294</updated>
+    </task>
+    <task id="LOCAL-00009" summary="reestructuracion de la interfaz CondicionInscripcion">
+      <option name="closed" value="true" />
+      <created>1770493176628</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1770493176628</updated>
+    </task>
+    <task id="LOCAL-00010" summary="reestructuracion de la interfaz CondicionInscripcion">
+      <option name="closed" value="true" />
+      <created>1770493257745</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1770493257745</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -167,6 +231,8 @@
     <MESSAGE value="Se agrego logica del builder, se elimino la clase DirectorPlanBuilder ya que es una inner class de Plan de Estudio." />
     <MESSAGE value="Se agrego logica y cambios de estados del patron State." />
     <MESSAGE value="se ajustaron los metodos que no se utilizan segun el modelo de clases" />
-    <option name="LAST_COMMIT_MESSAGE" value="se ajustaron los metodos que no se utilizan segun el modelo de clases" />
+    <MESSAGE value="se agrego la condicion de aprobado de final" />
+    <MESSAGE value="reestructuracion de la interfaz CondicionInscripcion" />
+    <option name="LAST_COMMIT_MESSAGE" value="reestructuracion de la interfaz CondicionInscripcion" />
   </component>
 </project>

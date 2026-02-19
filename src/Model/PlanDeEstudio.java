@@ -70,8 +70,11 @@ public class PlanDeEstudio {
         materiasOptativas.remove(materia);
     }
 
-    public class DirectorBuilder{
-        Builder builder;
+
+    // INNER CLASS CONTEXT DEL BUILDER.
+    // static para que pueda ser accedido desde fuera de la clase.
+    public static class DirectorBuilder{
+        public Builder builder;
 
         public DirectorBuilder(Builder b) {
             this.builder = b;
@@ -81,20 +84,19 @@ public class PlanDeEstudio {
             this.builder = b;
         }
 
-        public PlanDeEstudio crearPlan(){
-
-//            builder.setMateriasObligatorias();
-//            builder.setEstrategiaInscripcion();
-//            builder.setOptativasMinimas();
-//            builder.setMateriasOptativas();
-
-            return this.builder.devolverPlan();
-
+        public void devolverPlan(){
+            this.builder.devolverPlan();
         }
 
+        public PlanDeEstudio crearPlan(List<Materia> materiasObligatorias, List<Materia> materiasOptativas, int cantOpcionales, CondicionInscripcion cond){
 
+            builder.setMateriasObligatorias(materiasObligatorias);
+            builder.setEstrategiaInscripcion(cond);
+            builder.setOptativasMinimas(cantOpcionales);
+            builder.setMateriasOptativas(materiasOptativas);
 
+            return this.builder.devolverPlan();
+        }
     }
-
 
 }

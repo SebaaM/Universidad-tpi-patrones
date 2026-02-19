@@ -7,7 +7,7 @@ public class Materia {
     private List <Materia> correlativas;
     private String nombre;
     private Integer id;
-    private int cuatrimestre;
+    private int cuatrimestre; // 1 al 10
 
     public Materia(String nombre, Integer id, int cuatrimestre) {
         this.nombre = nombre;
@@ -38,6 +38,14 @@ public class Materia {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public int getCuatrimestre() {
+        return cuatrimestre;
+    }
+
+    public void setCuatrimestre(int cuatrimestre) {
+        this.cuatrimestre = cuatrimestre;
     }
 
     public String verCorrelativas(){
