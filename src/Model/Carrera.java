@@ -1,7 +1,5 @@
 package Model;
 
-import Model.BuilderPlan.Builder;
-
 public class Carrera {
     public PlanDeEstudio planEstudio = new PlanDeEstudio();
     private String nombre;

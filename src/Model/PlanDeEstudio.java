@@ -2,7 +2,6 @@ package Model;
 
 import Model.BuilderPlan.Builder;
 import Model.InscripcionStrategy.CondicionInscripcion;
-import Model.InscripcionStrategy.DirectorStrategy;
 
 import java.util.ArrayList;
 import java.util.List;
