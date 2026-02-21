@@ -6,9 +6,13 @@ import Model.PlanDeEstudio;
 
 import java.util.List;
 
-public class PlanBuildA implements Builder {
+public class PlanBuild implements Builder {
 
     private PlanDeEstudio plan;
+
+    public PlanBuild() {
+        this.plan = new PlanDeEstudio();
+    }
 
     @Override
     public Builder setMateriasObligatorias(List <Materia> materiasObligatoria) {

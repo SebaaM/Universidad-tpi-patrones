@@ -1,7 +1,9 @@
 package Model;
 
 import Model.BuilderPlan.Builder;
+import Model.BuilderPlan.PlanBuild;
 import Model.InscripcionStrategy.CondicionInscripcion;
+import Model.InscripcionStrategy.DirectorStrategy;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,13 +13,14 @@ public class PlanDeEstudio {
     private Integer cantOpcionales;
     private List<Materia> materiasOptativas = new ArrayList<>();
     private List<Materia> materiasObligatorias = new ArrayList<>();
-    private CondicionInscripcion condicionInscripcion ;
-    //private DirectorStrategy directorStrategy;
+    private DirectorStrategy directorStrategy;
     private DirectorBuilder directorBuilder;
 
     public PlanDeEstudio() {
         // setear estrategia por defecto
         // setear builder por defecto ??
+        this.directorBuilder = new DirectorBuilder(new PlanBuild());
+        this.directorStrategy = new DirectorStrategy();
     }
 
     public Integer getCantOpcionales() {
@@ -45,12 +48,11 @@ public class PlanDeEstudio {
     }
 
     public CondicionInscripcion getCondicionInscripcion() {
-        return this.condicionInscripcion;
+        return this.directorStrategy.getStrategy();
     }
 
     public void setCondicionInscripcion(CondicionInscripcion cond) {
-        this.condicionInscripcion = cond;
-
+        directorStrategy.setStrategy(cond);
     }
 
     public void agregarMateriaOptativa(Materia materia) {

@@ -5,15 +5,20 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Estudiante {
+
+    // atributos
     private String nombre;
     private String apellido;
     private long dni;
     private ArrayList<Cursada> cursadasInscriptas;
+    private Carrera carrera;
 
+    // constructor
     public Estudiante(String nombre, String apellido, long dni) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.dni = dni;
+        this.carrera = null; // CHEQUEO DE NULL.
         this.cursadasInscriptas = new ArrayList<Cursada>();
     }
 
@@ -23,6 +28,13 @@ public class Estudiante {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+    public Carrera getCarrera() {
+        return carrera;
+    }
+
+    public void setCarrera(Carrera carrera) {
+        this.carrera = carrera;
     }
 
     public String getApellido() {

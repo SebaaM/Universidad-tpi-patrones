@@ -64,4 +64,6 @@ public class GuiUniversidad {
         frame.setVisible(true);
     }
 
+
+
 }

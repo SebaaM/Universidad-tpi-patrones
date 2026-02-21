@@ -16,7 +16,7 @@ public class Cursada {
 
     public Cursada(Materia m) {
         this.materia = m;
-        this.estado = new Inscripto();
+        this.estado = new Inscripto(); // estado por default
         this.cursadaAprobada = false;
         this.anioCursada = new Date().getYear() + 1900;
     }

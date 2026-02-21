@@ -4,7 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d02309d3-7c2a-4564-a3da-62178968c33e" name="Changes" comment="implementacion del Interfaz Visual Completa, falta logica de botones." />
+    <list default="true" id="d02309d3-7c2a-4564-a3da-62178968c33e" name="Changes" comment="xml">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GuiUniversidad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GuiUniversidad.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/BuilderPlan/PlanBuildA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/BuilderPlan/PlanBuild.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/BuilderPlan/PlanBuildB.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Carrera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Carrera.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Cursada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Cursada.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/EstadoState/EstadoCursada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/EstadoState/EstadoCursada.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Estudiante.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Estudiante.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/InscripcionStrategy/DirectorStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/InscripcionStrategy/DirectorStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/PlanDeEstudio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/PlanDeEstudio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Universidad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Universidad.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -66,8 +78,10 @@
     &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW&quot;: &quot;true&quot;,
     &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.STATE&quot;: &quot;right&quot;,
     &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH&quot;: &quot;179&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW&quot;: &quot;false&quot;,
     &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.STATE&quot;: &quot;left&quot;,
     &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;314&quot;,
+    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
@@ -212,7 +226,15 @@
       <option name="project" value="LOCAL" />
       <updated>1771541137277</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="xml">
+      <option name="closed" value="true" />
+      <created>1771541166807</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1771541166807</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -251,7 +273,8 @@
     <MESSAGE value="implementacion de Strategy" />
     <MESSAGE value="implementacion del Interfaz Visual: Alta Estudiante, Alta Materia.&#10;implementacion base de Inscripcion de materia, e incripcion de carrera." />
     <MESSAGE value="implementacion del Interfaz Visual Completa, falta logica de botones." />
-    <option name="LAST_COMMIT_MESSAGE" value="implementacion del Interfaz Visual Completa, falta logica de botones." />
+    <MESSAGE value="xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="xml" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

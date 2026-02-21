@@ -40,12 +40,17 @@ public class Universidad {
         }
     }
 
-    public void buscarEstudiante (Estudiante estudiante) {
-        estudiantes.contains(estudiante);
+
+    public Estudiante buscarEstudiante (Estudiante estudiante) {
+        if (estudiantes.contains(estudiante))
+            return estudiantes.get(estudiantes.indexOf(estudiante));
+        return null;
     }
 
-    public void buscarCarrera (Carrera carrera) {
-        carreras.contains(carrera);
+    public Carrera buscarCarrera (Carrera carrera) {
+        if (carreras.contains(carrera))
+            return carreras.get(carreras.indexOf(carrera));
+        return null;
     }
 
     public List<Estudiante> getEstudiantes() {

@@ -12,14 +12,17 @@ public class DirectorStrategy {
     private CondicionInscripcion strategy;
 
     public DirectorStrategy() {
-        // setear estrategia predeterminada?
-        // sacar el null
-        this.strategy = null;
+        this.strategy = new CondicionA(); // condicion por Default o poner null?
     }
 
-    public void setEstrategiaInscripcion(CondicionInscripcion strategy) {
+    public void setStrategy(CondicionInscripcion strategy) {
         this.strategy = strategy;
     }
+
+    public CondicionInscripcion getStrategy() {
+        return strategy;
+    }
+
 
     public boolean revisarInscripcion(PlanDeEstudio plan, Materia mat, Estudiante est){
         if(strategy == null){
