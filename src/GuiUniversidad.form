@@ -6,7 +6,7 @@
     </constraints>
     <properties>
       <autoscrolls value="true"/>
-      <preferredSize width="800" height="400"/>
+      <preferredSize width="900" height="450"/>
       <visible value="true"/>
     </properties>
     <border type="line"/>
@@ -29,28 +29,22 @@
               <text value="Alta Estudiante"/>
             </properties>
           </component>
+          <component id="e1d15" class="javax.swing.JButton" binding="AltaMateriaButton">
+            <constraints/>
+            <properties>
+              <text value="Alta Materia"/>
+            </properties>
+          </component>
           <component id="7a6aa" class="javax.swing.JButton" binding="AltaCarreraButton">
             <constraints/>
             <properties>
               <text value="Alta Carrera"/>
             </properties>
           </component>
-          <component id="3dad8" class="javax.swing.JButton" binding="Crearplan">
-            <constraints/>
-            <properties>
-              <text value="Crear Plan"/>
-            </properties>
-          </component>
           <component id="31307" class="javax.swing.JButton" binding="InscripcionEstudianteButton">
             <constraints/>
             <properties>
-              <text value="Inscripcion Estudiante"/>
-            </properties>
-          </component>
-          <component id="6e74e" class="javax.swing.JButton" binding="verificarFinalizadaButton" default-binding="true">
-            <constraints/>
-            <properties>
-              <text value="Verificar Finalizada"/>
+              <text value="Inscripcion a Carrera"/>
             </properties>
           </component>
           <component id="6ea55" class="javax.swing.JButton" binding="InscripcionAMateriaButton">
@@ -59,27 +53,37 @@
               <text value="Inscripcion a Materia"/>
             </properties>
           </component>
+          <component id="6e74e" class="javax.swing.JButton" binding="verificarFinalizadaButton" default-binding="true">
+            <constraints/>
+            <properties>
+              <text value="Verificar Finalizada"/>
+            </properties>
+          </component>
         </children>
       </grid>
       <grid id="f03b1" binding="ContentPanel" layout-manager="FormLayout">
         <rowspec value="center:d:noGrow"/>
-        <rowspec value="top:0dlu:noGrow"/>
-        <rowspec value="top:267px:noGrow"/>
+        <rowspec value="top:4dlu:noGrow"/>
+        <rowspec value="center:max(d;4px):noGrow"/>
+        <rowspec value="top:4dlu:noGrow"/>
+        <rowspec value="center:max(d;4px):noGrow"/>
+        <rowspec value="top:4dlu:noGrow"/>
+        <rowspec value="center:max(d;4px):noGrow"/>
+        <rowspec value="top:4dlu:noGrow"/>
+        <rowspec value="center:max(d;4px):noGrow"/>
         <rowspec value="top:4dlu:noGrow"/>
         <rowspec value="center:max(d;4px):noGrow"/>
         <rowspec value="top:0dlu:noGrow"/>
-        <rowspec value="center:0px:noGrow"/>
+        <rowspec value="center:max(d;4px):noGrow"/>
         <rowspec value="top:0dlu:noGrow"/>
-        <rowspec value="center:0dlu:noGrow"/>
-        <rowspec value="center:0px:noGrow"/>
         <rowspec value="top:0dlu:noGrow"/>
         <rowspec value="top:0dlu:noGrow"/>
         <rowspec value="top:0dlu:noGrow"/>
         <rowspec value="center:max(d;0px):noGrow"/>
         <rowspec value="top:0dlu:noGrow"/>
         <rowspec value="top:0dlu:noGrow"/>
-        <rowspec value="center:max(d;0px):noGrow"/>
-        <rowspec value="top:0dlu:noGrow"/>
+        <rowspec value="top:4dlu:noGrow"/>
+        <rowspec value="center:max(d;4px):noGrow"/>
         <rowspec value="top:0dlu:noGrow"/>
         <colspec value="fill:d:grow(0.8)"/>
         <constraints border-constraint="Center"/>
@@ -97,7 +101,7 @@
         <border type="line"/>
         <children>
           <grid id="2272a" binding="AltaEstudiantePanel" layout-manager="FormLayout">
-            <rowspec value="center:d:grow"/>
+            <rowspec value="center:d:noGrow"/>
             <rowspec value="top:4dlu:noGrow"/>
             <rowspec value="center:d:grow"/>
             <rowspec value="top:4dlu:noGrow"/>
@@ -123,7 +127,7 @@
             </constraints>
             <properties>
               <autoscrolls value="true"/>
-              <visible value="true"/>
+              <visible value="false"/>
             </properties>
             <border type="line" title="Alta Estudiante" title-justification="2">
               <color color="-3092263"/>
@@ -203,7 +207,7 @@
                   <forms/>
                 </constraints>
                 <properties>
-                  <text value="Cancelar"/>
+                  <text value="Limpiar"/>
                 </properties>
               </component>
               <hspacer id="6892e">
@@ -218,6 +222,38 @@
                   <forms defaultalign-horz="false"/>
                 </constraints>
               </hspacer>
+            </children>
+          </grid>
+          <grid id="ef4a3" binding="Salida" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+            <constraints>
+              <grid row="12" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+              <forms/>
+            </constraints>
+            <properties>
+              <autoscrolls value="true"/>
+              <name value="SalidaText"/>
+              <visible value="true"/>
+            </properties>
+            <border type="line" title="Salida">
+              <color color="-3092263"/>
+            </border>
+            <children>
+              <component id="36178" class="javax.swing.JTextArea" binding="Consola">
+                <constraints/>
+                <properties>
+                  <alignmentX value="1.0"/>
+                  <alignmentY value="1.0"/>
+                  <background color="-2958891"/>
+                  <columns value="60"/>
+                  <editable value="false"/>
+                  <focusable value="false"/>
+                  <margin top="5" left="0" bottom="5" right="10"/>
+                  <name value="JTextPrincipal"/>
+                  <rows value="4"/>
+                  <tabSize value="12"/>
+                  <text value=""/>
+                </properties>
+              </component>
             </children>
           </grid>
           <grid id="4e0af" binding="AltaMateriaPanel" layout-manager="FormLayout">
@@ -250,21 +286,23 @@
             <colspec value="left:7dlu:noGrow"/>
             <colspec value="fill:146dlu:noGrow"/>
             <constraints>
-              <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
+              <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
               <forms defaultalign-horz="false" defaultalign-vert="false"/>
             </constraints>
             <properties>
               <autoscrolls value="true"/>
+              <enabled value="true"/>
               <focusCycleRoot value="false"/>
               <focusable value="false"/>
+              <foreground color="-592129"/>
               <inheritsPopupMenu value="true"/>
               <opaque value="false"/>
               <visible value="false"/>
             </properties>
             <border type="line" title="Alta Materia" title-justification="2" title-position="2">
               <font/>
-              <title-color color="-3092263"/>
-              <color color="-3092263"/>
+              <title-color color="-15065296"/>
+              <color color="-16053481"/>
             </border>
             <children>
               <component id="db110" class="javax.swing.JLabel">
@@ -336,7 +374,7 @@
                   <forms/>
                 </constraints>
                 <properties>
-                  <text value="Cancelar"/>
+                  <text value="Limpiar"/>
                 </properties>
               </component>
               <component id="a2f52" class="javax.swing.JButton" binding="AltaMatAltaMateriaButton">
@@ -355,22 +393,6 @@
                 </constraints>
                 <properties>
                   <text value="Correlativas"/>
-                </properties>
-              </component>
-              <component id="51ac2" class="javax.swing.JList" binding="AltaMatCorrelativasJList">
-                <constraints>
-                  <grid row="2" column="8" row-span="16" col-span="1" vsize-policy="6" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                    <preferred-size width="150" height="50"/>
-                  </grid>
-                  <forms defaultalign-vert="false"/>
-                </constraints>
-                <properties>
-                  <focusCycleRoot value="true"/>
-                  <model>
-                    <item value="1"/>
-                    <item value="2"/>
-                    <item value="3"/>
-                  </model>
                 </properties>
               </component>
               <component id="6869f" class="javax.swing.JLabel">
@@ -397,6 +419,467 @@
                   <forms defaultalign-vert="false"/>
                 </constraints>
               </vspacer>
+              <scrollpane id="7fe6">
+                <constraints>
+                  <grid row="2" column="8" row-span="16" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                  <forms defaultalign-vert="false"/>
+                </constraints>
+                <properties>
+                  <opaque value="true"/>
+                  <preferredSize width="200" height="100"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <component id="51ac2" class="javax.swing.JList" binding="AltaMatCorrelativasJList">
+                    <constraints/>
+                    <properties>
+                      <focusCycleRoot value="true"/>
+                      <model/>
+                    </properties>
+                  </component>
+                </children>
+              </scrollpane>
+            </children>
+          </grid>
+          <grid id="73a4e" binding="CrearPlanPanel" layout-manager="FormLayout">
+            <rowspec value="center:d:noGrow"/>
+            <rowspec value="top:4dlu:noGrow"/>
+            <rowspec value="center:max(d;4px):noGrow"/>
+            <rowspec value="top:4dlu:noGrow"/>
+            <rowspec value="center:max(d;4px):noGrow"/>
+            <rowspec value="top:4dlu:noGrow"/>
+            <rowspec value="center:75px:noGrow"/>
+            <rowspec value="top:0dlu:noGrow"/>
+            <rowspec value="center:d:noGrow"/>
+            <rowspec value="top:0dlu:noGrow"/>
+            <rowspec value="center:d:noGrow"/>
+            <rowspec value="top:0dlu:noGrow"/>
+            <rowspec value="center:10dlu:noGrow"/>
+            <rowspec value="top:0dlu:noGrow"/>
+            <rowspec value="center:max(d;4px):noGrow"/>
+            <rowspec value="top:4dlu:noGrow"/>
+            <rowspec value="center:25px:noGrow"/>
+            <rowspec value="top:4dlu:noGrow"/>
+            <rowspec value="center:max(d;4px):noGrow"/>
+            <colspec value="fill:60px:noGrow"/>
+            <colspec value="left:4dlu:noGrow"/>
+            <colspec value="fill:max(d;4px):noGrow"/>
+            <colspec value="left:4dlu:noGrow"/>
+            <colspec value="fill:max(d;4px):noGrow"/>
+            <colspec value="left:4dlu:noGrow"/>
+            <colspec value="fill:80dlu:noGrow"/>
+            <colspec value="left:4dlu:noGrow"/>
+            <colspec value="fill:200px:noGrow"/>
+            <colspec value="left:4dlu:noGrow"/>
+            <colspec value="fill:80dlu:noGrow"/>
+            <constraints>
+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+              <forms/>
+            </constraints>
+            <properties>
+              <autoscrolls value="true"/>
+              <visible value="true"/>
+            </properties>
+            <border type="none" title="Alta Carrera" title-justification="2"/>
+            <children>
+              <component id="dcd89" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="6" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                    <preferred-size width="118" height="31"/>
+                  </grid>
+                  <forms/>
+                </constraints>
+                <properties>
+                  <horizontalAlignment value="0"/>
+                  <horizontalTextPosition value="0"/>
+                  <text value="Materia Obligatoria"/>
+                </properties>
+              </component>
+              <component id="234fd" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="6" column="8" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                    <preferred-size width="120" height="31"/>
+                  </grid>
+                  <forms defaultalign-horz="false"/>
+                </constraints>
+                <properties>
+                  <text value="Materia Opcionales"/>
+                </properties>
+              </component>
+              <component id="eb035" class="javax.swing.JComboBox" binding="CrearPlEstrategiaCB">
+                <constraints>
+                  <grid row="14" column="7" row-span="1" col-span="2" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                  <forms/>
+                </constraints>
+                <properties/>
+              </component>
+              <component id="f4df8" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="14" column="2" row-span="1" col-span="5" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                  <forms defaultalign-horz="false"/>
+                </constraints>
+                <properties>
+                  <text value="Seleccionar Estrategia de Inscripcion"/>
+                </properties>
+              </component>
+              <hspacer id="e14ea">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <forms defaultalign-horz="false"/>
+                </constraints>
+              </hspacer>
+              <vspacer id="49661">
+                <constraints>
+                  <grid row="12" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                  <forms defaultalign-vert="false"/>
+                </constraints>
+              </vspacer>
+              <component id="84036" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+                  <forms defaultalign-horz="false"/>
+                </constraints>
+                <properties>
+                  <text value="Nombre"/>
+                </properties>
+              </component>
+              <component id="75fff" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="4" column="8" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <forms/>
+                </constraints>
+                <properties>
+                  <text value="Cantidad de materias opcionales"/>
+                </properties>
+              </component>
+              <component id="8d453" class="javax.swing.JTextField" binding="CrearPlCantOpcJT">
+                <constraints>
+                  <grid row="4" column="10" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                  <forms defaultalign-horz="false"/>
+                </constraints>
+                <properties>
+                  <text value=""/>
+                </properties>
+              </component>
+              <component id="35d86" class="javax.swing.JButton" binding="CrearPlsalirButton">
+                <constraints>
+                  <grid row="18" column="8" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <forms/>
+                </constraints>
+                <properties>
+                  <text value="Salir"/>
+                </properties>
+              </component>
+              <component id="735ca" class="javax.swing.JButton" binding="CrearPlCrearButton">
+                <constraints>
+                  <grid row="18" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <forms/>
+                </constraints>
+                <properties>
+                  <text value="Crear"/>
+                </properties>
+              </component>
+              <vspacer id="db156">
+                <constraints>
+                  <grid row="16" column="6" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                  <forms defaultalign-vert="false"/>
+                </constraints>
+              </vspacer>
+              <component id="8f163" class="javax.swing.JTextField" binding="CrearPlNombreJT">
+                <constraints>
+                  <grid row="4" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                  <forms defaultalign-horz="false"/>
+                </constraints>
+                <properties/>
+              </component>
+              <component id="fad9" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+                  <forms defaultalign-horz="false"/>
+                </constraints>
+                <properties>
+                  <text value="ID"/>
+                </properties>
+              </component>
+              <component id="2708b" class="javax.swing.JTextField" binding="CrearPlIDJT">
+                <constraints>
+                  <grid row="2" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                  <forms defaultalign-horz="false"/>
+                </constraints>
+                <properties>
+                  <text value=""/>
+                </properties>
+              </component>
+              <scrollpane id="5c086">
+                <constraints>
+                  <grid row="6" column="6" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                  <forms defaultalign-vert="false"/>
+                </constraints>
+                <properties>
+                  <preferredSize width="250" height="150"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <component id="902f6" class="javax.swing.JList" binding="CrearPlMateriaObligatoriaJlist">
+                    <constraints/>
+                    <properties>
+                      <autoscrolls value="true"/>
+                      <doubleBuffered value="false"/>
+                      <dropMode value="INSERT"/>
+                      <inheritsPopupMenu value="false"/>
+                      <layoutOrientation value="0"/>
+                      <minimumSize width="50" height="80"/>
+                      <model/>
+                      <opaque value="true"/>
+                      <preferredSize width="25" height="120"/>
+                      <selectedIndex value="-1"/>
+                      <selectionMode value="2"/>
+                      <visibleRowCount value="4"/>
+                    </properties>
+                  </component>
+                </children>
+              </scrollpane>
+              <scrollpane id="f666">
+                <constraints>
+                  <grid row="6" column="10" row-span="6" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                  <forms defaultalign-vert="false"/>
+                </constraints>
+                <properties>
+                  <opaque value="true"/>
+                  <preferredSize width="250" height="150"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <component id="d7749" class="javax.swing.JList" binding="CrearPlMateriaOpcionalJList">
+                    <constraints/>
+                    <properties>
+                      <model/>
+                      <opaque value="true"/>
+                      <preferredSize width="25" height="110"/>
+                    </properties>
+                  </component>
+                </children>
+              </scrollpane>
+            </children>
+          </grid>
+          <grid id="1b9d7" binding="InscripcionMateria" layout-manager="FormLayout">
+            <rowspec value="center:d:noGrow"/>
+            <rowspec value="top:4dlu:noGrow"/>
+            <rowspec value="center:45px:noGrow"/>
+            <rowspec value="top:4dlu:noGrow"/>
+            <rowspec value="center:d:grow"/>
+            <rowspec value="top:0dlu:noGrow"/>
+            <rowspec value="center:44px:noGrow"/>
+            <colspec value="fill:50dlu:noGrow"/>
+            <colspec value="left:0dlu:noGrow"/>
+            <colspec value="fill:50px:noGrow"/>
+            <colspec value="left:0dlu:noGrow"/>
+            <colspec value="fill:180px:noGrow"/>
+            <colspec value="left:4dlu:noGrow"/>
+            <colspec value="fill:80px:noGrow"/>
+            <colspec value="left:4dlu:noGrow"/>
+            <colspec value="fill:d:noGrow"/>
+            <colspec value="left:2dlu:noGrow"/>
+            <colspec value="center:180px:noGrow"/>
+            <colspec value="fill:d:noGrow"/>
+            <colspec value="left:0dlu:noGrow"/>
+            <colspec value="fill:0px:noGrow"/>
+            <colspec value="left:2dlu:noGrow"/>
+            <colspec value="fill:0dlu:noGrow"/>
+            <constraints>
+              <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+              <forms defaultalign-vert="false"/>
+            </constraints>
+            <properties>
+              <autoscrolls value="true"/>
+              <focusable value="false"/>
+              <inheritsPopupMenu value="true"/>
+              <opaque value="false"/>
+              <visible value="false"/>
+            </properties>
+            <border type="line" title="Inscripcion Materia" title-justification="2">
+              <color color="-3092263"/>
+            </border>
+            <children>
+              <component id="bb9a9" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <forms/>
+                </constraints>
+                <properties>
+                  <text value="Alumno"/>
+                </properties>
+              </component>
+              <component id="bb043" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <forms/>
+                </constraints>
+                <properties>
+                  <text value=""/>
+                </properties>
+              </component>
+              <hspacer id="e6a21">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <forms defaultalign-horz="false"/>
+                </constraints>
+              </hspacer>
+              <component id="8617d" class="javax.swing.JComboBox" binding="InscMatAlumnoCB">
+                <constraints>
+                  <grid row="2" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                  <forms/>
+                </constraints>
+                <properties>
+                  <model/>
+                  <visible value="true"/>
+                </properties>
+              </component>
+              <component id="3a74d" class="javax.swing.JButton" binding="InscMatAltaButton">
+                <constraints>
+                  <grid row="6" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <forms/>
+                </constraints>
+                <properties>
+                  <text value="Dar Alta"/>
+                </properties>
+              </component>
+              <vspacer id="171c7">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="11" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                  <forms defaultalign-vert="false"/>
+                </constraints>
+              </vspacer>
+              <component id="7848c" class="javax.swing.JButton" binding="InscMatCancelarButton">
+                <constraints>
+                  <grid row="6" column="8" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <forms/>
+                </constraints>
+                <properties>
+                  <text value="Cancelar"/>
+                </properties>
+              </component>
+              <component id="83c4e" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="2" column="8" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="1" use-parent-layout="false"/>
+                  <forms defaultalign-horz="false"/>
+                </constraints>
+                <properties>
+                  <text value="Materia"/>
+                </properties>
+              </component>
+              <component id="d34b0" class="javax.swing.JComboBox" binding="InscMatMateriaCB">
+                <constraints>
+                  <grid row="2" column="10" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <forms defaultalign-horz="false"/>
+                </constraints>
+                <properties>
+                  <model/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="ba17c" binding="VerificarFinalizada" layout-manager="FormLayout">
+            <rowspec value="center:d:grow"/>
+            <rowspec value="top:4dlu:noGrow"/>
+            <rowspec value="center:d:grow"/>
+            <rowspec value="top:4dlu:noGrow"/>
+            <rowspec value="center:d:grow"/>
+            <rowspec value="top:4dlu:noGrow"/>
+            <rowspec value="center:d:grow"/>
+            <colspec value="fill:100px:noGrow"/>
+            <colspec value="left:4dlu:noGrow"/>
+            <colspec value="fill:max(d;4px):noGrow"/>
+            <colspec value="left:4dlu:noGrow"/>
+            <colspec value="fill:100px:grow(0.5)"/>
+            <colspec value="left:4dlu:noGrow"/>
+            <colspec value="fill:max(d;4px):noGrow"/>
+            <colspec value="left:4dlu:noGrow"/>
+            <colspec value="fill:d:grow"/>
+            <constraints>
+              <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+              <forms/>
+            </constraints>
+            <properties>
+              <autoscrolls value="true"/>
+              <focusable value="false"/>
+              <inheritsPopupMenu value="true"/>
+              <opaque value="false"/>
+              <visible value="false"/>
+            </properties>
+            <border type="line" title="Consultar Carrera Finalizada" title-justification="2">
+              <color color="-3092263"/>
+            </border>
+            <children>
+              <component id="d4b49" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <forms/>
+                </constraints>
+                <properties>
+                  <text value="Estudiante:"/>
+                </properties>
+              </component>
+              <component id="4e405" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <forms/>
+                </constraints>
+                <properties>
+                  <text value=""/>
+                </properties>
+              </component>
+              <vspacer id="551f4">
+                <constraints>
+                  <grid row="0" column="6" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                  <forms defaultalign-vert="false"/>
+                </constraints>
+              </vspacer>
+              <hspacer id="cb7ea">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <forms defaultalign-horz="false"/>
+                </constraints>
+              </hspacer>
+              <hspacer id="46dd4">
+                <constraints>
+                  <grid row="2" column="8" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <forms defaultalign-horz="false"/>
+                </constraints>
+              </hspacer>
+              <component id="480a0" class="javax.swing.JComboBox" binding="VerFinEstudianteCB">
+                <constraints>
+                  <grid row="2" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                  <forms/>
+                </constraints>
+                <properties>
+                  <model/>
+                </properties>
+              </component>
+              <component id="e5469" class="javax.swing.JButton" binding="VerFinSalirButton">
+                <constraints>
+                  <grid row="6" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <forms/>
+                </constraints>
+                <properties>
+                  <text value="Salir"/>
+                </properties>
+              </component>
+              <component id="ae71f" class="javax.swing.JButton" binding="VerFinEstadoButton">
+                <constraints>
+                  <grid row="2" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <forms/>
+                </constraints>
+                <properties>
+                  <text value="Ver Estado"/>
+                </properties>
+              </component>
             </children>
           </grid>
           <grid id="21d85" binding="inscripcionCarrera" layout-manager="FormLayout">
@@ -423,7 +906,7 @@
             <colspec value="left:0dlu:noGrow"/>
             <colspec value="fill:100px:noGrow"/>
             <constraints>
-              <grid row="16" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
               <forms/>
             </constraints>
             <properties>
@@ -523,456 +1006,6 @@
                   <forms defaultalign-vert="false"/>
                 </constraints>
               </vspacer>
-            </children>
-          </grid>
-          <grid id="ba17c" binding="VerificarFinalizada" layout-manager="FormLayout">
-            <rowspec value="center:d:grow"/>
-            <rowspec value="top:4dlu:noGrow"/>
-            <rowspec value="center:d:grow"/>
-            <rowspec value="top:4dlu:noGrow"/>
-            <rowspec value="center:d:grow"/>
-            <rowspec value="top:4dlu:noGrow"/>
-            <rowspec value="center:d:grow"/>
-            <colspec value="fill:100px:noGrow"/>
-            <colspec value="left:4dlu:noGrow"/>
-            <colspec value="fill:max(d;4px):noGrow"/>
-            <colspec value="left:4dlu:noGrow"/>
-            <colspec value="fill:100px:grow(0.5)"/>
-            <colspec value="left:4dlu:noGrow"/>
-            <colspec value="fill:max(d;4px):noGrow"/>
-            <colspec value="left:4dlu:noGrow"/>
-            <colspec value="fill:d:grow"/>
-            <constraints>
-              <grid row="13" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-              <forms/>
-            </constraints>
-            <properties>
-              <autoscrolls value="true"/>
-              <focusable value="false"/>
-              <inheritsPopupMenu value="true"/>
-              <opaque value="false"/>
-              <visible value="false"/>
-            </properties>
-            <border type="line" title="Consultar Carrera Finalizada" title-justification="2">
-              <color color="-3092263"/>
-            </border>
-            <children>
-              <component id="d4b49" class="javax.swing.JLabel">
-                <constraints>
-                  <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-                  <forms/>
-                </constraints>
-                <properties>
-                  <text value="Estudiante:"/>
-                </properties>
-              </component>
-              <component id="4e405" class="javax.swing.JLabel">
-                <constraints>
-                  <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-                  <forms/>
-                </constraints>
-                <properties>
-                  <text value=""/>
-                </properties>
-              </component>
-              <vspacer id="551f4">
-                <constraints>
-                  <grid row="0" column="6" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
-                  <forms defaultalign-vert="false"/>
-                </constraints>
-              </vspacer>
-              <hspacer id="cb7ea">
-                <constraints>
-                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-                  <forms defaultalign-horz="false"/>
-                </constraints>
-              </hspacer>
-              <hspacer id="46dd4">
-                <constraints>
-                  <grid row="2" column="8" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-                  <forms defaultalign-horz="false"/>
-                </constraints>
-              </hspacer>
-              <component id="480a0" class="javax.swing.JComboBox" binding="VerFinEstudianteCB">
-                <constraints>
-                  <grid row="2" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
-                  <forms/>
-                </constraints>
-                <properties>
-                  <model/>
-                </properties>
-              </component>
-              <component id="e5469" class="javax.swing.JButton" binding="VerFinSalirButton">
-                <constraints>
-                  <grid row="6" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-                  <forms/>
-                </constraints>
-                <properties>
-                  <text value="Salir"/>
-                </properties>
-              </component>
-              <component id="ae71f" class="javax.swing.JButton" binding="VerFinEstadoButton">
-                <constraints>
-                  <grid row="2" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-                  <forms/>
-                </constraints>
-                <properties>
-                  <text value="Ver Estado"/>
-                </properties>
-              </component>
-            </children>
-          </grid>
-          <grid id="1b9d7" binding="InscripcionMateria" layout-manager="FormLayout">
-            <rowspec value="center:d:noGrow"/>
-            <rowspec value="top:4dlu:noGrow"/>
-            <rowspec value="center:45px:noGrow"/>
-            <rowspec value="top:4dlu:noGrow"/>
-            <rowspec value="center:d:grow"/>
-            <rowspec value="top:0dlu:noGrow"/>
-            <rowspec value="center:44px:noGrow"/>
-            <colspec value="fill:50dlu:noGrow"/>
-            <colspec value="left:0dlu:noGrow"/>
-            <colspec value="fill:50px:noGrow"/>
-            <colspec value="left:0dlu:noGrow"/>
-            <colspec value="fill:180px:noGrow"/>
-            <colspec value="left:4dlu:noGrow"/>
-            <colspec value="fill:80px:noGrow"/>
-            <colspec value="left:4dlu:noGrow"/>
-            <colspec value="fill:d:noGrow"/>
-            <colspec value="left:2dlu:noGrow"/>
-            <colspec value="center:180px:noGrow"/>
-            <colspec value="fill:d:noGrow"/>
-            <colspec value="left:0dlu:noGrow"/>
-            <colspec value="fill:0px:noGrow"/>
-            <colspec value="left:2dlu:noGrow"/>
-            <colspec value="fill:0dlu:noGrow"/>
-            <constraints>
-              <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
-              <forms defaultalign-vert="false"/>
-            </constraints>
-            <properties>
-              <autoscrolls value="true"/>
-              <focusable value="false"/>
-              <inheritsPopupMenu value="true"/>
-              <opaque value="false"/>
-              <visible value="false"/>
-            </properties>
-            <border type="line" title="Inscripcion Materia" title-justification="2">
-              <color color="-3092263"/>
-            </border>
-            <children>
-              <component id="bb9a9" class="javax.swing.JLabel">
-                <constraints>
-                  <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-                  <forms/>
-                </constraints>
-                <properties>
-                  <text value="Alumno"/>
-                </properties>
-              </component>
-              <component id="bb043" class="javax.swing.JLabel">
-                <constraints>
-                  <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-                  <forms/>
-                </constraints>
-                <properties>
-                  <text value=""/>
-                </properties>
-              </component>
-              <hspacer id="e6a21">
-                <constraints>
-                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-                  <forms defaultalign-horz="false"/>
-                </constraints>
-              </hspacer>
-              <component id="8617d" class="javax.swing.JComboBox" binding="InscMatAlumnoCB">
-                <constraints>
-                  <grid row="2" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
-                  <forms/>
-                </constraints>
-                <properties>
-                  <model/>
-                  <visible value="false"/>
-                </properties>
-              </component>
-              <component id="3a74d" class="javax.swing.JButton" binding="InscMatAltaButton">
-                <constraints>
-                  <grid row="6" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-                  <forms/>
-                </constraints>
-                <properties>
-                  <text value="Dar Alta"/>
-                </properties>
-              </component>
-              <vspacer id="171c7">
-                <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="11" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
-                  <forms defaultalign-vert="false"/>
-                </constraints>
-              </vspacer>
-              <component id="7848c" class="javax.swing.JButton" binding="InscMatCancelarButton">
-                <constraints>
-                  <grid row="6" column="8" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-                  <forms/>
-                </constraints>
-                <properties>
-                  <text value="Cancelar"/>
-                </properties>
-              </component>
-              <component id="83c4e" class="javax.swing.JLabel">
-                <constraints>
-                  <grid row="2" column="8" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="1" use-parent-layout="false"/>
-                  <forms defaultalign-horz="false"/>
-                </constraints>
-                <properties>
-                  <text value="Materia"/>
-                </properties>
-              </component>
-              <component id="d34b0" class="javax.swing.JComboBox" binding="InscMatMateriaCB">
-                <constraints>
-                  <grid row="2" column="10" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-                  <forms defaultalign-horz="false"/>
-                </constraints>
-                <properties>
-                  <model/>
-                </properties>
-              </component>
-            </children>
-          </grid>
-          <grid id="ef4a3" binding="Salida" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
-            <constraints>
-              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-              <forms/>
-            </constraints>
-            <properties>
-              <autoscrolls value="true"/>
-              <name value="SalidaText"/>
-              <visible value="true"/>
-            </properties>
-            <border type="line" title="Salida">
-              <color color="-3092263"/>
-            </border>
-            <children>
-              <component id="36178" class="javax.swing.JTextArea" binding="Consola">
-                <constraints/>
-                <properties>
-                  <alignmentX value="1.0"/>
-                  <alignmentY value="1.0"/>
-                  <background color="-2958891"/>
-                  <columns value="60"/>
-                  <editable value="false"/>
-                  <focusable value="false"/>
-                  <margin top="5" left="0" bottom="5" right="10"/>
-                  <name value="JTextPrincipal"/>
-                  <rows value="4"/>
-                  <tabSize value="12"/>
-                  <text value=""/>
-                </properties>
-              </component>
-            </children>
-          </grid>
-          <grid id="73a4e" binding="CrearPlanPanel" layout-manager="FormLayout">
-            <rowspec value="center:d:noGrow"/>
-            <rowspec value="top:4dlu:noGrow"/>
-            <rowspec value="center:max(d;4px):noGrow"/>
-            <rowspec value="top:4dlu:noGrow"/>
-            <rowspec value="center:75px:noGrow"/>
-            <rowspec value="top:0dlu:noGrow"/>
-            <rowspec value="center:d:noGrow"/>
-            <rowspec value="top:0dlu:noGrow"/>
-            <rowspec value="center:d:noGrow"/>
-            <rowspec value="top:0dlu:noGrow"/>
-            <rowspec value="center:10dlu:noGrow"/>
-            <rowspec value="top:0dlu:noGrow"/>
-            <rowspec value="center:max(d;4px):noGrow"/>
-            <rowspec value="top:4dlu:noGrow"/>
-            <rowspec value="center:25px:noGrow"/>
-            <rowspec value="top:4dlu:noGrow"/>
-            <rowspec value="center:max(d;4px):noGrow"/>
-            <colspec value="fill:60px:noGrow"/>
-            <colspec value="left:4dlu:noGrow"/>
-            <colspec value="fill:max(d;4px):noGrow"/>
-            <colspec value="left:4dlu:noGrow"/>
-            <colspec value="fill:max(d;4px):noGrow"/>
-            <colspec value="left:4dlu:noGrow"/>
-            <colspec value="fill:80dlu:noGrow"/>
-            <colspec value="left:4dlu:noGrow"/>
-            <colspec value="fill:max(d;4px):noGrow"/>
-            <colspec value="left:4dlu:noGrow"/>
-            <colspec value="fill:80dlu:noGrow"/>
-            <constraints>
-              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-              <forms/>
-            </constraints>
-            <properties>
-              <autoscrolls value="true"/>
-              <visible value="false"/>
-            </properties>
-            <border type="none" title="Crear Plan de Estudios" title-justification="2"/>
-            <children>
-              <component id="dcd89" class="javax.swing.JLabel">
-                <constraints>
-                  <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
-                    <preferred-size width="118" height="31"/>
-                  </grid>
-                  <forms/>
-                </constraints>
-                <properties>
-                  <horizontalAlignment value="0"/>
-                  <horizontalTextPosition value="0"/>
-                  <text value="Materia Obligatoria"/>
-                </properties>
-              </component>
-              <component id="234fd" class="javax.swing.JLabel">
-                <constraints>
-                  <grid row="4" column="8" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
-                    <preferred-size width="120" height="31"/>
-                  </grid>
-                  <forms/>
-                </constraints>
-                <properties>
-                  <text value="Materia Opcionales"/>
-                </properties>
-              </component>
-              <component id="d7749" class="javax.swing.JList" binding="CrearPlMateriaOpcionalJList">
-                <constraints>
-                  <grid row="4" column="10" row-span="6" col-span="1" vsize-policy="6" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                    <preferred-size width="150" height="50"/>
-                  </grid>
-                  <forms defaultalign-vert="false"/>
-                </constraints>
-                <properties>
-                  <model>
-                    <item value="ej 1"/>
-                    <item value="ej 2"/>
-                    <item value="ej 3"/>
-                    <item value="ej 4"/>
-                    <item value="ej 5"/>
-                    <item value="ej 6"/>
-                    <item value="ej 7"/>
-                  </model>
-                </properties>
-              </component>
-              <component id="eb035" class="javax.swing.JComboBox" binding="CrearPlEstrategiaCB">
-                <constraints>
-                  <grid row="12" column="6" row-span="1" col-span="3" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
-                  <forms/>
-                </constraints>
-                <properties/>
-              </component>
-              <component id="f4df8" class="javax.swing.JLabel">
-                <constraints>
-                  <grid row="12" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-                  <forms/>
-                </constraints>
-                <properties>
-                  <text value="Seleccionar Estrategia de Inscripcion"/>
-                </properties>
-              </component>
-              <hspacer id="e14ea">
-                <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-                  <forms defaultalign-horz="false"/>
-                </constraints>
-              </hspacer>
-              <vspacer id="49661">
-                <constraints>
-                  <grid row="10" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
-                  <forms defaultalign-vert="false"/>
-                </constraints>
-              </vspacer>
-              <component id="84036" class="javax.swing.JLabel">
-                <constraints>
-                  <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-                  <forms/>
-                </constraints>
-                <properties>
-                  <text value="Carrera:"/>
-                </properties>
-              </component>
-              <component id="629af" class="javax.swing.JComboBox" binding="CrearPlanCarreraCB">
-                <constraints>
-                  <grid row="2" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
-                  <forms/>
-                </constraints>
-                <properties>
-                  <model/>
-                </properties>
-              </component>
-              <component id="75fff" class="javax.swing.JLabel">
-                <constraints>
-                  <grid row="2" column="8" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-                  <forms/>
-                </constraints>
-                <properties>
-                  <text value="Cantidad de materias opcionales"/>
-                </properties>
-              </component>
-              <component id="8d453" class="javax.swing.JTextField" binding="CrearPlCantOpcJT">
-                <constraints>
-                  <grid row="2" column="10" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-                    <preferred-size width="150" height="-1"/>
-                  </grid>
-                  <forms defaultalign-horz="false"/>
-                </constraints>
-                <properties>
-                  <text value=""/>
-                </properties>
-              </component>
-              <component id="35d86" class="javax.swing.JButton" binding="CrearPlsalirButton">
-                <constraints>
-                  <grid row="16" column="8" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-                  <forms/>
-                </constraints>
-                <properties>
-                  <text value="Salir"/>
-                </properties>
-              </component>
-              <component id="735ca" class="javax.swing.JButton" binding="CrearPlCrearButton">
-                <constraints>
-                  <grid row="16" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-                  <forms/>
-                </constraints>
-                <properties>
-                  <text value="Crear"/>
-                </properties>
-              </component>
-              <vspacer id="db156">
-                <constraints>
-                  <grid row="14" column="6" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
-                  <forms defaultalign-vert="false"/>
-                </constraints>
-              </vspacer>
-              <component id="902f6" class="javax.swing.JList" binding="CrearPlMateriaObligatoriaJlist">
-                <constraints>
-                  <grid row="4" column="6" row-span="1" col-span="1" vsize-policy="6" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                    <preferred-size width="150" height="50"/>
-                  </grid>
-                  <forms defaultalign-vert="false"/>
-                </constraints>
-                <properties>
-                  <autoscrolls value="true"/>
-                  <doubleBuffered value="false"/>
-                  <dropMode value="INSERT"/>
-                  <inheritsPopupMenu value="false"/>
-                  <layoutOrientation value="0"/>
-                  <minimumSize width="50" height="80"/>
-                  <model>
-                    <item value="ej 1"/>
-                    <item value="ej 2"/>
-                    <item value="ej 3"/>
-                    <item value="ej 4"/>
-                    <item value="ej 5"/>
-                    <item value="ej 6"/>
-                    <item value="ej 7"/>
-                  </model>
-                  <opaque value="true"/>
-                  <preferredSize width="25" height="120"/>
-                  <selectedIndex value="0"/>
-                  <selectionMode value="2"/>
-                  <visibleRowCount value="4"/>
-                </properties>
-              </component>
             </children>
           </grid>
         </children>

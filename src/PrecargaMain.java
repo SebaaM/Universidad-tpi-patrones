@@ -4,7 +4,7 @@ public class PrecargaMain {
 
 
     public static void main(String[] args) {
-
+/*
         //Instancia de Universidad
         Universidad uni = new Universidad();
 
@@ -38,6 +38,9 @@ public class PrecargaMain {
 
         // chequear si un estudiante termino la carrera.
 
-
+*/
     }
+
+
+
 }
