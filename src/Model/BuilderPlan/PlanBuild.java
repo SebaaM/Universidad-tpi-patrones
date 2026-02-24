@@ -14,15 +14,26 @@ public class PlanBuild implements Builder {
         this.plan = new PlanDeEstudio();
     }
 
+
+    /**
+     * @param materiaObligatoria
+     * @return
+     */
     @Override
-    public Builder setMateriasObligatorias(List <Materia> materiasObligatoria) {
-        this.plan.setMateriasObligatorias(materiasObligatoria);
+    public Builder agregarMateriaObligatoria(Materia materiaObligatoria) {
+        plan.getMateriasObligatorias().add(materiaObligatoria
+
+);
         return this;
     }
 
+    /**
+     * @param materiaOptativa
+     * @return
+     */
     @Override
-    public Builder setMateriasOptativas(List<Materia> materiasOpt) {
-        this.plan.setMateriasOptativas(materiasOpt);
+    public Builder agregarMateriaOpcional(Materia materiaOptativa) {
+        plan.getMateriasOptativas().add(materiaOptativa);
         return this;
     }
 

@@ -4,18 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d02309d3-7c2a-4564-a3da-62178968c33e" name="Changes" comment="xml">
+    <list default="true" id="d02309d3-7c2a-4564-a3da-62178968c33e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TPI-OBJETOS/GuiUniversidad.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TPI-OBJETOS/GuiUniversidad.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/BuilderPlan/Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/BuilderPlan/Builder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/BuilderPlan/PlanBuildA.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/BuilderPlan/PlanBuildB.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/Carrera.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/Carrera.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/Estudiante.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/Estudiante.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/PlanDeEstudio.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/PlanDeEstudio.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/Universidad.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/Universidad.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GuiUniversidad.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/GuiUniversidad.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GuiUniversidad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GuiUniversidad.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/BuilderPlan/PlanBuildA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/BuilderPlan/PlanBuild.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/BuilderPlan/PlanBuildB.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Carrera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Carrera.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Cursada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Cursada.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/EstadoState/EstadoCursada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/EstadoState/EstadoCursada.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Estudiante.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Estudiante.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/InscripcionStrategy/DirectorStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/InscripcionStrategy/DirectorStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/BuilderPlan/Builder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/BuilderPlan/Builder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/BuilderPlan/PlanBuild.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/BuilderPlan/PlanBuild.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/PlanDeEstudio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/PlanDeEstudio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Universidad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Universidad.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PrecargaMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PrecargaMain.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,15 +77,16 @@
     &quot;Application.das.executor&quot;: &quot;Run&quot;,
     &quot;JAR Application.jgoodies-forms-1.9.0.jar.executor&quot;: &quot;Run&quot;,
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;OverrideImplement.generate.javadoc&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW&quot;: &quot;true&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW&quot;: &quot;false&quot;,
     &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.STATE&quot;: &quot;right&quot;,
     &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH&quot;: &quot;179&quot;,
-    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW&quot;: &quot;false&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW&quot;: &quot;true&quot;,
     &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.STATE&quot;: &quot;left&quot;,
-    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;314&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;385&quot;,
     &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
@@ -234,7 +240,23 @@
       <option name="project" value="LOCAL" />
       <updated>1771541166807</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Comentarios y correccion respecto al modelo de clases.">
+      <option name="closed" value="true" />
+      <created>1771698168744</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1771698168744</updated>
+    </task>
+    <task id="LOCAL-00016" summary="precarga main">
+      <option name="closed" value="true" />
+      <created>1771698185046</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1771698185046</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -274,7 +296,9 @@
     <MESSAGE value="implementacion del Interfaz Visual: Alta Estudiante, Alta Materia.&#10;implementacion base de Inscripcion de materia, e incripcion de carrera." />
     <MESSAGE value="implementacion del Interfaz Visual Completa, falta logica de botones." />
     <MESSAGE value="xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="xml" />
+    <MESSAGE value="Comentarios y correccion respecto al modelo de clases." />
+    <MESSAGE value="precarga main" />
+    <option name="LAST_COMMIT_MESSAGE" value="precarga main" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -6,9 +6,30 @@ import java.util.List;
 public class Universidad {
     private List <Estudiante> estudiantes = new ArrayList();
     private List <Carrera> carreras = new ArrayList();
+    private List<Materia> materias = new ArrayList<>();
 
     public Universidad() {
 
+    }
+
+
+    public void agregarMateria(Materia materia) {
+        materias.add(materia);
+    }
+
+    public void quitarMateria(Materia materia) {
+        materias.remove(materia);
+    }
+
+    public List<Materia> getMaterias() {
+        return materias;
+    }
+
+    public Materia buscarMateriaPorId(Integer id) {
+        return materias.stream()
+                .filter(m -> m.getId().equals(id))
+                .findFirst()
+                .orElse(null);
     }
 
     public void agregarEstudiante(Estudiante estudiante) {

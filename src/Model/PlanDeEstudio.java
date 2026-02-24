@@ -17,9 +17,7 @@ public class PlanDeEstudio {
     private DirectorBuilder directorBuilder;
 
     public PlanDeEstudio() {
-        // setear estrategia por defecto
-        // setear builder por defecto ??
-        this.directorBuilder = new DirectorBuilder(new PlanBuild());
+
         this.directorStrategy = new DirectorStrategy();
     }
 
@@ -55,26 +53,12 @@ public class PlanDeEstudio {
         directorStrategy.setStrategy(cond);
     }
 
-    public void agregarMateriaOptativa(Materia materia) {
-        materiasOptativas.add(materia);
-    }
-
-    public void agregarMateriaObligatoria(Materia materia) {
-        materiasObligatorias.add(materia);
-    }
-
-    public void sacarMateriaObligatoria(Materia materia) {
-        materiasObligatorias.remove(materia);
-    }
-
-    public void sacarMateriaOptativa(Materia materia) {
-        materiasOptativas.remove(materia);
-    }
-
 
     // INNER CLASS CONTEXT DEL BUILDER.
     // static para que pueda ser accedido desde fuera de la clase.
     public static class DirectorBuilder{
+        // Al escalar la aplicacion acepta distintos builder
+
         public Builder builder;
 
         public DirectorBuilder(Builder b) {
@@ -89,15 +73,6 @@ public class PlanDeEstudio {
             this.builder.devolverPlan();
         }
 
-        public PlanDeEstudio crearPlan(List<Materia> materiasObligatorias, List<Materia> materiasOptativas, int cantOpcionales, CondicionInscripcion cond){
-
-            builder.setMateriasObligatorias(materiasObligatorias);
-            builder.setEstrategiaInscripcion(cond);
-            builder.setOptativasMinimas(cantOpcionales);
-            builder.setMateriasOptativas(materiasOptativas);
-
-            return this.builder.devolverPlan();
-        }
     }
 
 }
