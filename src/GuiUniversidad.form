@@ -6,12 +6,13 @@
     </constraints>
     <properties>
       <autoscrolls value="true"/>
-      <preferredSize width="800" height="400"/>
+      <opaque value="true"/>
+      <preferredSize width="954" height="450"/>
       <visible value="true"/>
     </properties>
     <border type="line"/>
     <children>
-      <grid id="3282a" binding="JPanelPestania" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+      <grid id="3282a" binding="JPanelPestania" layout-manager="FlowLayout" hgap="6" vgap="5" flow-align="1">
         <constraints border-constraint="North"/>
         <properties/>
         <border type="none"/>
@@ -72,8 +73,8 @@
         <rowspec value="top:4dlu:noGrow"/>
         <rowspec value="center:max(d;4px):noGrow"/>
         <rowspec value="top:4dlu:noGrow"/>
-        <rowspec value="center:276px:noGrow"/>
-        <rowspec value="top:0dlu:noGrow"/>
+        <rowspec value="center:max(d;4px):noGrow"/>
+        <rowspec value="top:4dlu:noGrow"/>
         <rowspec value="top:0dlu:noGrow"/>
         <rowspec value="top:0dlu:noGrow"/>
         <rowspec value="top:0dlu:noGrow"/>
@@ -222,253 +223,6 @@
               </hspacer>
             </children>
           </grid>
-          <grid id="73a4e" binding="CrearPlanPanel" layout-manager="FormLayout">
-            <rowspec value="center:0px:noGrow"/>
-            <rowspec value="top:4dlu:noGrow"/>
-            <rowspec value="center:max(d;4px):noGrow"/>
-            <rowspec value="top:4dlu:noGrow"/>
-            <rowspec value="center:max(d;4px):noGrow"/>
-            <rowspec value="top:4dlu:noGrow"/>
-            <rowspec value="center:70px:noGrow"/>
-            <rowspec value="top:0dlu:noGrow"/>
-            <rowspec value="center:d:noGrow"/>
-            <rowspec value="top:0dlu:noGrow"/>
-            <rowspec value="center:d:noGrow"/>
-            <rowspec value="top:4dlu:noGrow"/>
-            <rowspec value="center:d:noGrow"/>
-            <rowspec value="top:0dlu:noGrow"/>
-            <rowspec value="center:26px:noGrow"/>
-            <rowspec value="top:0dlu:noGrow"/>
-            <rowspec value="center:0dlu:noGrow"/>
-            <rowspec value="top:4dlu:noGrow"/>
-            <rowspec value="center:d:grow"/>
-            <rowspec value="top:4dlu:noGrow"/>
-            <rowspec value="center:0px:noGrow"/>
-            <rowspec value="top:0dlu:noGrow"/>
-            <rowspec value="center:24px:noGrow"/>
-            <rowspec value="top:4dlu:noGrow"/>
-            <rowspec value="center:28px:noGrow"/>
-            <rowspec value="top:4dlu:noGrow"/>
-            <rowspec value="center:0px:noGrow"/>
-            <colspec value="fill:15px:grow"/>
-            <colspec value="left:4dlu:noGrow"/>
-            <colspec value="fill:max(d;4px):noGrow"/>
-            <colspec value="left:4dlu:noGrow"/>
-            <colspec value="fill:max(d;4px):noGrow"/>
-            <colspec value="left:4dlu:noGrow"/>
-            <colspec value="fill:80dlu:noGrow"/>
-            <colspec value="left:4dlu:noGrow"/>
-            <colspec value="fill:80px:noGrow"/>
-            <colspec value="left:4dlu:noGrow"/>
-            <colspec value="fill:max(d;4px):noGrow"/>
-            <colspec value="left:4dlu:noGrow"/>
-            <colspec value="fill:max(d;4px):noGrow"/>
-            <colspec value="left:4dlu:noGrow"/>
-            <colspec value="fill:80dlu:noGrow"/>
-            <colspec value="left:4dlu:noGrow"/>
-            <colspec value="fill:0px:noGrow"/>
-            <colspec value="left:4dlu:noGrow"/>
-            <colspec value="fill:d:grow"/>
-            <constraints>
-              <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-              <forms/>
-            </constraints>
-            <properties>
-              <autoscrolls value="true"/>
-              <preferredSize width="850" height="450"/>
-              <visible value="true"/>
-            </properties>
-            <border type="none" title="Crear Plan de Estudios" title-justification="2"/>
-            <children>
-              <component id="eb035" class="javax.swing.JComboBox" binding="CrearPlEstrategiaCB">
-                <constraints>
-                  <grid row="22" column="8" row-span="1" col-span="9" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
-                  <forms/>
-                </constraints>
-                <properties/>
-              </component>
-              <component id="f4df8" class="javax.swing.JLabel">
-                <constraints>
-                  <grid row="22" column="2" row-span="1" col-span="5" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-                  <forms/>
-                </constraints>
-                <properties>
-                  <text value="Seleccionar Estrategia de Inscripcion"/>
-                </properties>
-              </component>
-              <hspacer id="e14ea">
-                <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-                  <forms defaultalign-horz="false"/>
-                </constraints>
-              </hspacer>
-              <component id="84036" class="javax.swing.JLabel">
-                <constraints>
-                  <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-                  <forms/>
-                </constraints>
-                <properties>
-                  <text value="Carrera:"/>
-                </properties>
-              </component>
-              <component id="75fff" class="javax.swing.JLabel">
-                <constraints>
-                  <grid row="2" column="8" row-span="1" col-span="5" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
-                  <forms defaultalign-horz="false"/>
-                </constraints>
-                <properties>
-                  <text value="Cantidad opcionales"/>
-                </properties>
-              </component>
-              <component id="8d453" class="javax.swing.JTextField" binding="CrearPlCantOpcJT">
-                <constraints>
-                  <grid row="2" column="14" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-                    <preferred-size width="150" height="-1"/>
-                  </grid>
-                  <forms defaultalign-horz="false"/>
-                </constraints>
-                <properties>
-                  <text value=""/>
-                </properties>
-              </component>
-              <hspacer id="89668">
-                <constraints>
-                  <grid row="6" column="18" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-                  <forms defaultalign-horz="false"/>
-                </constraints>
-              </hspacer>
-              <component id="dcd89" class="javax.swing.JLabel">
-                <constraints>
-                  <grid row="4" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
-                    <preferred-size width="118" height="31"/>
-                  </grid>
-                  <forms/>
-                </constraints>
-                <properties>
-                  <horizontalAlignment value="0"/>
-                  <horizontalTextPosition value="0"/>
-                  <text value="Materia Obligatoria"/>
-                </properties>
-              </component>
-              <component id="234fd" class="javax.swing.JLabel">
-                <constraints>
-                  <grid row="4" column="12" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
-                    <preferred-size width="120" height="31"/>
-                  </grid>
-                  <forms/>
-                </constraints>
-                <properties>
-                  <text value="Materia Opcionales"/>
-                </properties>
-              </component>
-              <hspacer id="42fc0">
-                <constraints>
-                  <grid row="4" column="16" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-                  <forms defaultalign-horz="false"/>
-                </constraints>
-              </hspacer>
-              <scrollpane id="801d9">
-                <constraints>
-                  <grid row="6" column="6" row-span="13" col-span="3" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-                  <forms defaultalign-vert="false"/>
-                </constraints>
-                <properties>
-                  <autoscrolls value="true"/>
-                </properties>
-                <border type="none"/>
-                <children>
-                  <component id="902f6" class="javax.swing.JList" binding="CrearPlMateriaObligatoriaJlist">
-                    <constraints/>
-                    <properties>
-                      <autoscrolls value="true"/>
-                      <doubleBuffered value="false"/>
-                      <dropMode value="INSERT"/>
-                      <inheritsPopupMenu value="false"/>
-                      <layoutOrientation value="0"/>
-                      <minimumSize width="50" height="80"/>
-                      <model/>
-                      <opaque value="true"/>
-                      <preferredSize width="25" height="120"/>
-                      <selectedIndex value="-1"/>
-                      <selectionMode value="2"/>
-                      <visibleRowCount value="4"/>
-                    </properties>
-                  </component>
-                </children>
-              </scrollpane>
-              <scrollpane id="a5ee7">
-                <constraints>
-                  <grid row="6" column="12" row-span="13" col-span="6" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-                  <forms defaultalign-vert="false"/>
-                </constraints>
-                <properties>
-                  <autoscrolls value="true"/>
-                </properties>
-                <border type="none"/>
-                <children>
-                  <component id="d7749" class="javax.swing.JList" binding="CrearPlMateriaOpcionalJList">
-                    <constraints/>
-                    <properties>
-                      <model/>
-                      <preferredSize width="25" height="120"/>
-                      <requestFocusEnabled value="true"/>
-                    </properties>
-                  </component>
-                </children>
-              </scrollpane>
-              <component id="35d86" class="javax.swing.JButton" binding="CrearPlsalirButton">
-                <constraints>
-                  <grid row="24" column="12" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-                  <forms/>
-                </constraints>
-                <properties>
-                  <text value="Salir"/>
-                </properties>
-              </component>
-              <vspacer id="34539">
-                <constraints>
-                  <grid row="26" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
-                  <forms defaultalign-vert="false"/>
-                </constraints>
-              </vspacer>
-              <hspacer id="64bfd">
-                <constraints>
-                  <grid row="4" column="8" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-                  <forms defaultalign-horz="false"/>
-                </constraints>
-              </hspacer>
-              <vspacer id="dd331">
-                <constraints>
-                  <grid row="14" column="2" row-span="2" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
-                  <forms defaultalign-vert="false"/>
-                </constraints>
-              </vspacer>
-              <vspacer id="dad7d">
-                <constraints>
-                  <grid row="18" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
-                  <forms defaultalign-vert="false"/>
-                </constraints>
-              </vspacer>
-              <component id="735ca" class="javax.swing.JButton" binding="CrearPlCrearButton">
-                <constraints>
-                  <grid row="24" column="8" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-                  <forms/>
-                </constraints>
-                <properties>
-                  <text value="Crear"/>
-                </properties>
-              </component>
-              <component id="629af" class="javax.swing.JComboBox" binding="CrearPlanCarreraCB">
-                <constraints>
-                  <grid row="2" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
-                  <forms/>
-                </constraints>
-                <properties>
-                  <model/>
-                </properties>
-              </component>
-            </children>
-          </grid>
           <grid id="ef4a3" binding="Salida" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
             <constraints>
               <grid row="20" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
@@ -534,7 +288,7 @@
             <colspec value="left:0dlu:noGrow"/>
             <colspec value="fill:100px:grow"/>
             <constraints>
-              <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
               <forms/>
             </constraints>
             <properties>
@@ -654,7 +408,7 @@
             <colspec value="left:4dlu:noGrow"/>
             <colspec value="fill:d:grow"/>
             <constraints>
-              <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
               <forms/>
             </constraints>
             <properties>
@@ -760,7 +514,7 @@
             <colspec value="left:4dlu:noGrow"/>
             <colspec value="fill:d:grow"/>
             <constraints>
-              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
               <forms defaultalign-vert="false"/>
             </constraints>
             <properties>
@@ -892,7 +646,7 @@
             <colspec value="left:4dlu:noGrow"/>
             <colspec value="fill:d:grow"/>
             <constraints>
-              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
+              <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
               <forms defaultalign-horz="false" defaultalign-vert="false"/>
             </constraints>
             <properties>
@@ -1048,6 +802,274 @@
                   </component>
                 </children>
               </scrollpane>
+            </children>
+          </grid>
+          <grid id="73a4e" binding="CrearPlanPanel" layout-manager="FormLayout">
+            <rowspec value="center:0px:noGrow"/>
+            <rowspec value="top:4dlu:noGrow"/>
+            <rowspec value="center:max(d;4px):noGrow"/>
+            <rowspec value="top:4dlu:noGrow"/>
+            <rowspec value="center:max(d;4px):noGrow"/>
+            <rowspec value="top:4dlu:noGrow"/>
+            <rowspec value="center:max(d;4px):noGrow"/>
+            <rowspec value="top:4dlu:noGrow"/>
+            <rowspec value="center:70px:noGrow"/>
+            <rowspec value="top:0dlu:noGrow"/>
+            <rowspec value="center:d:noGrow"/>
+            <rowspec value="top:0dlu:noGrow"/>
+            <rowspec value="center:d:noGrow"/>
+            <rowspec value="top:4dlu:noGrow"/>
+            <rowspec value="center:d:noGrow"/>
+            <rowspec value="top:0dlu:noGrow"/>
+            <rowspec value="center:26px:noGrow"/>
+            <rowspec value="top:0dlu:noGrow"/>
+            <rowspec value="center:0dlu:noGrow"/>
+            <rowspec value="top:4dlu:noGrow"/>
+            <rowspec value="center:d:grow"/>
+            <rowspec value="top:4dlu:noGrow"/>
+            <rowspec value="center:0px:noGrow"/>
+            <rowspec value="top:0dlu:noGrow"/>
+            <rowspec value="center:24px:noGrow"/>
+            <rowspec value="top:4dlu:noGrow"/>
+            <rowspec value="center:28px:noGrow"/>
+            <rowspec value="top:4dlu:noGrow"/>
+            <rowspec value="center:0px:noGrow"/>
+            <colspec value="fill:15px:grow"/>
+            <colspec value="left:4dlu:noGrow"/>
+            <colspec value="fill:max(d;4px):noGrow"/>
+            <colspec value="left:4dlu:noGrow"/>
+            <colspec value="fill:max(d;4px):noGrow"/>
+            <colspec value="left:4dlu:noGrow"/>
+            <colspec value="fill:80dlu:noGrow"/>
+            <colspec value="left:4dlu:noGrow"/>
+            <colspec value="fill:80px:noGrow"/>
+            <colspec value="left:4dlu:noGrow"/>
+            <colspec value="fill:max(d;4px):noGrow"/>
+            <colspec value="left:4dlu:noGrow"/>
+            <colspec value="fill:max(d;4px):noGrow"/>
+            <colspec value="left:4dlu:noGrow"/>
+            <colspec value="fill:80dlu:noGrow"/>
+            <colspec value="left:4dlu:noGrow"/>
+            <colspec value="fill:0px:noGrow"/>
+            <colspec value="left:4dlu:noGrow"/>
+            <colspec value="fill:d:grow"/>
+            <constraints>
+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+              <forms/>
+            </constraints>
+            <properties>
+              <autoscrolls value="true"/>
+              <opaque value="true"/>
+              <preferredSize width="850" height="450"/>
+              <visible value="true"/>
+            </properties>
+            <border type="none" title="Crear Carrera" title-justification="2"/>
+            <children>
+              <component id="eb035" class="javax.swing.JComboBox" binding="CrearPlEstrategiaCB">
+                <constraints>
+                  <grid row="24" column="8" row-span="1" col-span="9" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                  <forms/>
+                </constraints>
+                <properties/>
+              </component>
+              <component id="f4df8" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="24" column="2" row-span="1" col-span="5" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <forms/>
+                </constraints>
+                <properties>
+                  <text value="Seleccionar Estrategia de Inscripcion"/>
+                </properties>
+              </component>
+              <hspacer id="e14ea">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <forms defaultalign-horz="false"/>
+                </constraints>
+              </hspacer>
+              <component id="84036" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <forms/>
+                </constraints>
+                <properties>
+                  <text value="Nombre"/>
+                </properties>
+              </component>
+              <component id="75fff" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="4" column="8" row-span="1" col-span="5" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+                  <forms defaultalign-horz="false"/>
+                </constraints>
+                <properties>
+                  <text value="Cantidad opcionales"/>
+                </properties>
+              </component>
+              <component id="8d453" class="javax.swing.JTextField" binding="CrearPlCantOpcJT">
+                <constraints>
+                  <grid row="4" column="14" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                  <forms defaultalign-horz="false"/>
+                </constraints>
+                <properties>
+                  <text value=""/>
+                </properties>
+              </component>
+              <hspacer id="89668">
+                <constraints>
+                  <grid row="8" column="18" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <forms defaultalign-horz="false"/>
+                </constraints>
+              </hspacer>
+              <component id="dcd89" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="6" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                    <preferred-size width="118" height="31"/>
+                  </grid>
+                  <forms/>
+                </constraints>
+                <properties>
+                  <horizontalAlignment value="0"/>
+                  <horizontalTextPosition value="0"/>
+                  <text value="Materia Obligatoria"/>
+                </properties>
+              </component>
+              <component id="234fd" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="6" column="12" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                    <preferred-size width="120" height="31"/>
+                  </grid>
+                  <forms/>
+                </constraints>
+                <properties>
+                  <text value="Materia Opcionales"/>
+                </properties>
+              </component>
+              <hspacer id="42fc0">
+                <constraints>
+                  <grid row="6" column="16" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <forms defaultalign-horz="false"/>
+                </constraints>
+              </hspacer>
+              <scrollpane id="801d9">
+                <constraints>
+                  <grid row="8" column="6" row-span="13" col-span="3" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                  <forms defaultalign-vert="false"/>
+                </constraints>
+                <properties>
+                  <autoscrolls value="true"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <component id="902f6" class="javax.swing.JList" binding="CrearPlMateriaObligatoriaJlist">
+                    <constraints/>
+                    <properties>
+                      <autoscrolls value="true"/>
+                      <doubleBuffered value="false"/>
+                      <dropMode value="INSERT"/>
+                      <inheritsPopupMenu value="false"/>
+                      <layoutOrientation value="0"/>
+                      <minimumSize width="50" height="80"/>
+                      <model/>
+                      <opaque value="true"/>
+                      <preferredSize width="25" height="120"/>
+                      <selectedIndex value="-1"/>
+                      <selectionMode value="2"/>
+                      <visibleRowCount value="4"/>
+                    </properties>
+                  </component>
+                </children>
+              </scrollpane>
+              <scrollpane id="a5ee7">
+                <constraints>
+                  <grid row="8" column="12" row-span="13" col-span="6" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                  <forms defaultalign-vert="false"/>
+                </constraints>
+                <properties>
+                  <autoscrolls value="true"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <component id="d7749" class="javax.swing.JList" binding="CrearPlMateriaOpcionalJList">
+                    <constraints/>
+                    <properties>
+                      <model/>
+                      <preferredSize width="25" height="120"/>
+                      <requestFocusEnabled value="true"/>
+                    </properties>
+                  </component>
+                </children>
+              </scrollpane>
+              <component id="35d86" class="javax.swing.JButton" binding="CrearPlsalirButton">
+                <constraints>
+                  <grid row="26" column="12" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <forms/>
+                </constraints>
+                <properties>
+                  <text value="Salir"/>
+                </properties>
+              </component>
+              <vspacer id="34539">
+                <constraints>
+                  <grid row="28" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                  <forms defaultalign-vert="false"/>
+                </constraints>
+              </vspacer>
+              <hspacer id="64bfd">
+                <constraints>
+                  <grid row="6" column="8" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <forms defaultalign-horz="false"/>
+                </constraints>
+              </hspacer>
+              <vspacer id="dd331">
+                <constraints>
+                  <grid row="16" column="2" row-span="2" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                  <forms defaultalign-vert="false"/>
+                </constraints>
+              </vspacer>
+              <vspacer id="dad7d">
+                <constraints>
+                  <grid row="20" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                  <forms defaultalign-vert="false"/>
+                </constraints>
+              </vspacer>
+              <component id="735ca" class="javax.swing.JButton" binding="CrearPlCrearButton">
+                <constraints>
+                  <grid row="26" column="8" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <forms/>
+                </constraints>
+                <properties>
+                  <text value="Crear"/>
+                </properties>
+              </component>
+              <component id="366f5" class="javax.swing.JTextField" binding="CrearPlNombreJT">
+                <constraints>
+                  <grid row="4" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                  <forms defaultalign-horz="false"/>
+                </constraints>
+                <properties/>
+              </component>
+              <component id="f7d46" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <forms/>
+                </constraints>
+                <properties>
+                  <text value="ID"/>
+                </properties>
+              </component>
+              <component id="dae51" class="javax.swing.JTextField" binding="CrearPlIDJT">
+                <constraints>
+                  <grid row="2" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                  <forms defaultalign-horz="false"/>
+                </constraints>
+                <properties/>
+              </component>
             </children>
           </grid>
         </children>
