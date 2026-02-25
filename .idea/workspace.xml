@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d02309d3-7c2a-4564-a3da-62178968c33e" name="Changes" comment="">
+    <list default="true" id="d02309d3-7c2a-4564-a3da-62178968c33e" name="Changes" comment="se areglo layout en el form">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TPI-OBJETOS/GuiUniversidad.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TPI-OBJETOS/GuiUniversidad.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GuiUniversidad.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/GuiUniversidad.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GuiUniversidad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GuiUniversidad.java" afterDir="false" />
     </list>
@@ -68,12 +69,12 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW": "true",
+    "UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW": "false",
     "UI_DESIGNER_EDITOR_MODE.PaletteManager.STATE": "right",
     "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "179",
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW": "true",
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.STATE": "left",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "385",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "294",
     "create.test.in.the.same.root": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
@@ -243,7 +244,15 @@
       <option name="project" value="LOCAL" />
       <updated>1771698185046</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="se areglo layout en el form">
+      <option name="closed" value="true" />
+      <created>1771978495412</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1771978495412</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -285,7 +294,8 @@
     <MESSAGE value="xml" />
     <MESSAGE value="Comentarios y correccion respecto al modelo de clases." />
     <MESSAGE value="precarga main" />
-    <option name="LAST_COMMIT_MESSAGE" value="precarga main" />
+    <MESSAGE value="se areglo layout en el form" />
+    <option name="LAST_COMMIT_MESSAGE" value="se areglo layout en el form" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

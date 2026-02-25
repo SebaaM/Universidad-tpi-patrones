@@ -31,7 +31,6 @@ public class GuiUniversidad {
     private JPanel InscripcionMateria;
     private JPanel inscripcionCarrera;
     private JPanel VerificarFinalizada;
-    private JButton Crearplan;
     private JComboBox InscMatAlumnoCB;
     private JComboBox InscMatMateriaCB;
     private JList AltaMatCorrelativasJList;
@@ -57,6 +56,7 @@ public class GuiUniversidad {
     private JComboBox CrearPlEstrategiaCB;
     private JTextField CrearPlCantOpcJT;
     private JButton CrearPlCrearButton;
+    private JComboBox CrearPlanCarreraCB;
     private JButton AltaMateriaButton;
     private JTextField CrearPlNombreJT;
     private JTextField CrearPlIDJT;
