@@ -797,8 +797,7 @@ public class GuiUniversidad {
     // Agregar este mEtodo en GuiUniversidad
     private void precargarDatos() {
         precargarEstrategias();
-        precargarEstudiantes();
-        precargarCarrerasYMaterias();
+        PrecargaMain.precargarDatos(universidad, Consola);
         actualizarListasCrearPlan(); // Actualizar las listas después de precargar
     }
 
@@ -812,132 +811,6 @@ public class GuiUniversidad {
         modelEstrategias.addElement("Condicion E");
         CrearPlEstrategiaCB.setModel(modelEstrategias);
     }
-
-    private void precargarEstudiantes() {
-        // Precargar 8 estudiantes
-        String[] nombres = {"Juan", "María", "Carlos", "Ana", "Luis", "Sofía", "Diego", "Laura"};
-        String[] apellidos = {"García", "Rodríguez", "Martínez", "López", "González", "Pérez", "Sánchez", "Ramírez"};
-
-        for (int i = 0; i < 8; i++) {
-            long dni = 30000000L + i * 1000; // DNI: 30000000, 30001000, 30002000, etc.
-            Estudiante estudiante = new Estudiante(nombres[i], apellidos[i], dni);
-            universidad.agregarEstudiante(estudiante);
-        }
-
-        Consola.append("=== Estudiantes precargados ===\n");
-        universidad.getEstudiantes().forEach(e -> Consola.append(e.toString() + "\n"));
-        Consola.append("\n");
-    }
-
-    private void precargarCarrerasYMaterias() {
-        // Crear materias base (15 materias para 3 carreras de 5 cada una)
-        List<Materia> todasLasMaterias = new ArrayList<>();
-
-        // Materias para Ingeniería (1-5)
-        todasLasMaterias.add(new Materia("Matemática I", 101, 1));
-        todasLasMaterias.add(new Materia("Física I", 102, 1));
-        todasLasMaterias.add(new Materia("Programación I", 103, 1));
-        todasLasMaterias.add(new Materia("Álgebra Lineal", 104, 2));
-        todasLasMaterias.add(new Materia("Cálculo Diferencial", 105, 2));
-
-        // Materias para Licenciatura en Sistemas (6-10)
-        todasLasMaterias.add(new Materia("Base de Datos I", 106, 1));
-        todasLasMaterias.add(new Materia("Redes de Datos", 107, 2));
-        todasLasMaterias.add(new Materia("Ingeniería de Software", 108, 3));
-        todasLasMaterias.add(new Materia("Inteligencia Artificial", 109, 4));
-        todasLasMaterias.add(new Materia("Seguridad Informática", 110, 5));
-
-        // Materias para Administración (11-15)
-        todasLasMaterias.add(new Materia("Introducción a la Administración", 111, 1));
-        todasLasMaterias.add(new Materia("Contabilidad Básica", 112, 1));
-        todasLasMaterias.add(new Materia("Economía I", 113, 2));
-        todasLasMaterias.add(new Materia("Marketing", 114, 3));
-        todasLasMaterias.add(new Materia("Gestión de Proyectos", 115, 4));
-
-        // Agregar correlativas simples (ejemplo)
-        // Matemática I -> Cálculo Diferencial
-        todasLasMaterias.get(4).getCorrelativas().add(todasLasMaterias.get(0));
-        // Programación I -> Ingeniería de Software
-        todasLasMaterias.get(7).getCorrelativas().add(todasLasMaterias.get(2));
-        // Base de Datos I -> Seguridad Informática
-        todasLasMaterias.get(9).getCorrelativas().add(todasLasMaterias.get(5));
-
-        // Agregar todas las materias a la universidad
-        for (Materia materia : todasLasMaterias) {
-            universidad.agregarMateria(materia);
-        }
-
-        // Crear las 3 carreras usando el Builder
-        crearCarreraIngenieria(todasLasMaterias.subList(0, 5));
-        crearCarreraSistemas(todasLasMaterias.subList(5, 10));
-        crearCarreraAdministracion(todasLasMaterias.subList(10, 15));
-
-        Consola.append("=== Carreras y Materias precargadas ===\n");
-        universidad.getCarreras().forEach(c -> {
-            Consola.append(c.toString() + "\n");
-            Consola.append("  Materias: " + c.getPlanEstudio().getMateriasObligatorias().size() + "\n");
-        });
-        Consola.append("\n");
-    }
-
-    private void crearCarreraIngenieria(List<Materia> materias) {
-        PlanBuild builder = new PlanBuild();
-
-        // Agregar 3 obligatorias y 2 optativas
-        builder.agregarMateriaObligatoria(materias.get(0)); // Matemática I
-        builder.agregarMateriaObligatoria(materias.get(1)); // Física I
-        builder.agregarMateriaObligatoria(materias.get(2)); // Programación I
-        builder.agregarMateriaOpcional(materias.get(3));     // Álgebra Lineal
-        builder.agregarMateriaOpcional(materias.get(4));     // Cálculo Diferencial
-
-        builder.setOptativasMinimas(1);
-        builder.setEstrategiaInscripcion(new CondicionA());
-
-        PlanDeEstudio plan = builder.devolverPlan();
-        Carrera ingenieria = new Carrera("Ingeniería en Sistemas", 1);
-        ingenieria.setPlanEstudio(plan);
-        universidad.agregarCarrera(ingenieria);
-    }
-
-    private void crearCarreraSistemas(List<Materia> materias) {
-        PlanBuild builder = new PlanBuild();
-
-        // Agregar 4 obligatorias y 1 optativa
-        builder.agregarMateriaObligatoria(materias.get(0)); // Base de Datos I
-        builder.agregarMateriaObligatoria(materias.get(1)); // Redes de Datos
-        builder.agregarMateriaObligatoria(materias.get(2)); // Ingeniería de Software
-        builder.agregarMateriaObligatoria(materias.get(3)); // Inteligencia Artificial
-        builder.agregarMateriaOpcional(materias.get(4));     // Seguridad Informática
-
-        builder.setOptativasMinimas(1);
-        builder.setEstrategiaInscripcion(new CondicionB());
-
-        PlanDeEstudio plan = builder.devolverPlan();
-        Carrera sistemas = new Carrera("Licenciatura en Sistemas", 2);
-        sistemas.setPlanEstudio(plan);
-        universidad.agregarCarrera(sistemas);
-    }
-
-    private void crearCarreraAdministracion(List<Materia> materias) {
-        PlanBuild builder = new PlanBuild();
-
-        // Agregar 2 obligatorias y 3 optativas
-        builder.agregarMateriaObligatoria(materias.get(0)); // Introducción a la Administración
-        builder.agregarMateriaObligatoria(materias.get(1)); // Contabilidad Básica
-        builder.agregarMateriaOpcional(materias.get(2));     // Economía I
-        builder.agregarMateriaOpcional(materias.get(3));     // Marketing
-        builder.agregarMateriaOpcional(materias.get(4));     // Gestión de Proyectos
-
-        builder.setOptativasMinimas(2);
-        builder.setEstrategiaInscripcion(new CondicionC());
-
-        PlanDeEstudio plan = builder.devolverPlan();
-        Carrera administracion = new Carrera("Licenciatura en Administración", 3);
-        administracion.setPlanEstudio(plan);
-        universidad.agregarCarrera(administracion);
-    }
-
-
 
 
     public static void main(String[] args) {
