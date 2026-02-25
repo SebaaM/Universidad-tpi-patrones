@@ -4,7 +4,7 @@ import Model.Cursada;
 
 public class ParcialAprobado extends EstadoCursada{
     public ParcialAprobado() {
-        System.out.println("parcial aprobado");
+        //System.out.println("parcial aprobado");
     }
 
     @Override

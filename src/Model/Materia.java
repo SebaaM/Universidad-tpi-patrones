@@ -58,8 +58,6 @@ public class Materia {
 
     @Override
     public String toString() {
-        //final String s = String.format("Materia{id=%d, nombre='%s', correlativas=[%s]}", id, nombre, correlativas.stream().map(Materia::getNombre).reduce((a, b) -> a + ", " + b).orElse(""));
-
-        return String.format("Materia{id=%d, nombre='%s'}", id, nombre);
+        return String.format("%s(%d)",nombre , id);
     }
 }

@@ -61,12 +61,9 @@ public class PrecargaMain {
         todasLasMaterias.add(new Materia("Marketing", 114, 3));
         todasLasMaterias.add(new Materia("Gestión de Proyectos", 115, 4));
 
-        // Agregar correlativas simples (ejemplo)
-        // Matemática I -> Cálculo Diferencial
+        // Agregar correlativas
         todasLasMaterias.get(4).getCorrelativas().add(todasLasMaterias.get(0));
-        // Programación I -> Ingeniería de Software
         todasLasMaterias.get(7).getCorrelativas().add(todasLasMaterias.get(2));
-        // Base de Datos I -> Seguridad Informática
         todasLasMaterias.get(9).getCorrelativas().add(todasLasMaterias.get(5));
 
         // Agregar todas las materias a la universidad

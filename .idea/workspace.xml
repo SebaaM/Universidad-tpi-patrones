@@ -4,10 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d02309d3-7c2a-4564-a3da-62178968c33e" name="Changes" comment="Se movio la precarga de datos.">
+    <list default="true" id="d02309d3-7c2a-4564-a3da-62178968c33e" name="Changes" comment="se modularizo la logica de controladores">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TPI-OBJETOS/GuiUniversidad.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TPI-OBJETOS/GuiUniversidad.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/Carrera.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/Carrera.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GuiUniversidad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GuiUniversidad.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Carrera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Carrera.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/EstadoState/CursadaAprobada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/EstadoState/CursadaAprobada.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/EstadoState/ParcialAprobado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/EstadoState/ParcialAprobado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Materia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Materia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PrecargaMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PrecargaMain.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -291,7 +297,15 @@
       <option name="project" value="LOCAL" />
       <updated>1771985067238</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="se modularizo la logica de controladores">
+      <option name="closed" value="true" />
+      <created>1771987652938</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1771987652938</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -340,7 +354,8 @@
     <MESSAGE value=".class" />
     <MESSAGE value="Fix: Loyout" />
     <MESSAGE value="Se movio la precarga de datos." />
-    <option name="LAST_COMMIT_MESSAGE" value="Se movio la precarga de datos." />
+    <MESSAGE value="se modularizo la logica de controladores" />
+    <option name="LAST_COMMIT_MESSAGE" value="se modularizo la logica de controladores" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

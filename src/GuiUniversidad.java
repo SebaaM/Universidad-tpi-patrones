@@ -74,7 +74,7 @@ public class GuiUniversidad {
         estudianteController = new EstudianteController(universidad, Consola);
         carreraController = new CarreraController(universidad, Consola);
 
-        // Inicializar controller con componentes UI
+        // Inicializar controller con componentes de Interfaz
         inicializarControllerComponents();
 
         precargarDatos();
@@ -143,7 +143,7 @@ public class GuiUniversidad {
 
 
     private void inicializarControllerComponents() {
-        // Configurar MateriaController con componentes UI
+        // Configurar MateriaController con componentes de Interfaz
         materiaController.setAltaMateriaComponents(
             AltaMatIdMateriaJT,
             AltaMatnombreJT,
@@ -156,7 +156,7 @@ public class GuiUniversidad {
             InscMatMateriaCB
         );
         
-        // Configurar EstudianteController con componentes UI
+        // Configurar EstudianteController con componentes de Interfaz
         estudianteController.setAltaEstudianteComponents(
             AltaEstNombreJT,
             AltaEstApellidoJT,
@@ -172,7 +172,7 @@ public class GuiUniversidad {
             VerFinEstudianteCB
         );
         
-        // Configurar CarreraController con componentes UI
+        // Configurar CarreraController con componentes de Interfaz
         carreraController.setCrearCarreraComponents(
             CrearPlNombreJT,
             CrearPlIDJT,
@@ -181,329 +181,6 @@ public class GuiUniversidad {
             CrearPlMateriaOpcionalJList,
             CrearPlEstrategiaCB
         );
-    }
-
-
-    ///      Inscripción a carrera      ///
-    
-    private void inscribirEstudianteEnCarrera() {
-        try {
-            Estudiante estudiante = (Estudiante) InscCarrEstudianteCB.getSelectedItem();
-            Carrera carrera = (Carrera) InscCarrCarreraCB.getSelectedItem();
-
-            if (estudiante == null || carrera == null) {
-                JOptionPane.showMessageDialog(null,
-                        "Debe seleccionar un estudiante y una carrera",
-                        "Error de validación",
-                        JOptionPane.ERROR_MESSAGE);
-                return;
-            }
-
-            // Verificar si el estudiante ya está inscripto en una carrera
-            if (estudiante.getCarrera() != null) {
-                JOptionPane.showMessageDialog(null,
-                        "El estudiante ya está inscripto en una carrera",
-                        "Error de inscripción",
-                        JOptionPane.WARNING_MESSAGE);
-                return;
-            }
-
-            // Inscribir al estudiante
-            estudiante.setCarrera(carrera);
-
-            JOptionPane.showMessageDialog(null,
-                    "Estudiante inscripto exitosamente en " + carrera.getNombre(),
-                    "Inscripción exitosa",
-                    JOptionPane.INFORMATION_MESSAGE);
-
-            limpiarCamposInscripcionCarrera();
-            Consola.append("Estudiante inscripto a carrera: " + estudiante.toString() + " -> " + carrera.toString() + "\n");
-
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null,
-                    "Error al inscribir estudiante: " + e.getMessage(),
-                    "Error",
-                    JOptionPane.ERROR_MESSAGE);
-        }
-    }
-
-    private void limpiarCamposInscripcionCarrera() {
-        InscCarrEstudianteCB.setSelectedIndex(-1);
-        InscCarrCarreraCB.setSelectedIndex(-1);
-    }
-
-    private void actualizarComboBoxesInscripcionCarrera() {
-        // se actualiza los combo box.
-        DefaultComboBoxModel<Estudiante> modelEstudiantes = new DefaultComboBoxModel<>();
-        universidad.getEstudiantes().forEach(modelEstudiantes::addElement);
-        InscCarrEstudianteCB.setModel(modelEstudiantes);
-
-        DefaultComboBoxModel<Carrera> modelCarreras = new DefaultComboBoxModel<>();
-        universidad.getCarreras().forEach(modelCarreras::addElement);
-        InscCarrCarreraCB.setModel(modelCarreras);
-    }
-
-    ///      Verificación de estado de carrera      ///
-    
-    private void verificarEstadoCarrera() {
-        try {
-            Estudiante estudiante = (Estudiante) VerFinEstudianteCB.getSelectedItem();
-
-            if (estudiante == null) {
-                JOptionPane.showMessageDialog(null,
-                        "Debe seleccionar un estudiante",
-                        "Error de validación",
-                        JOptionPane.ERROR_MESSAGE);
-                return;
-            }
-
-            if (estudiante.getCarrera() == null) {
-                JOptionPane.showMessageDialog(null,
-                        "El estudiante no está inscripto en ninguna carrera",
-                        "Error de verificación",
-                        JOptionPane.WARNING_MESSAGE);
-                return;
-            }
-
-            PlanDeEstudio plan = estudiante.getCarrera().getPlanEstudio();
-            
-            // Verificar si la carrera está finalizada
-            List<Materia> materiasAprobadas = estudiante.getCursadasInscriptas().stream()
-                    .filter(c -> c.isCursadaAprobadaTotal())
-                    .map(Cursada::getMateria)
-                    .collect(java.util.stream.Collectors.toList());
-            
-            boolean obligatoriasAprobadas = plan.getMateriasObligatorias().stream()
-                    .allMatch(materiasAprobadas::contains);
-            
-            long optativasAprobadas = plan.getMateriasOptativas().stream()
-                    .filter(materiasAprobadas::contains)
-                    .count();
-            
-            boolean optativasSuficientes = optativasAprobadas >= plan.getCantOpcionales();
-            
-            boolean carreraFinalizada = obligatoriasAprobadas && optativasSuficientes;
-
-            String mensaje = "Estudiante: " + estudiante.toString() + "\n" +
-                    "Carrera: " + estudiante.getCarrera().getNombre() + "\n" +
-                    "Estado: " + (carreraFinalizada ? "FINALIZADA" : "EN CURSO") + "\n" +
-                    "Materias aprobadas: " + materiasAprobadas.size() + "\n" +
-                    "Materias obligatorias totales: " + plan.getMateriasObligatorias().size() + "\n" +
-                    "Optativas aprobadas: " + optativasAprobadas + "\n" +
-                    "Optativas requeridas: " + plan.getCantOpcionales();
-
-            JOptionPane.showMessageDialog(null,
-                    mensaje,
-                    "Estado de Carrera",
-                    carreraFinalizada ? JOptionPane.INFORMATION_MESSAGE : JOptionPane.WARNING_MESSAGE);
-
-            Consola.append("Verificación de carrera - Estudiante: " + estudiante.toString() +
-                    " - Estado: " + (carreraFinalizada ? "FINALIZADA" : "EN CURSO") + "\n");
-
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null,
-                    "Error al verificar estado: " + e.getMessage(),
-                    "Error",
-                    JOptionPane.ERROR_MESSAGE);
-        }
-    }
-
-    private void limpiarCamposVerificarFinalizada() {
-        VerFinEstudianteCB.setSelectedIndex(-1);
-    }
-
-    private void actualizarComboBoxVerificarFinalizada() {
-        // solo estudiantes inscriptos a una carrera.
-        DefaultComboBoxModel<Estudiante> modelEstudiantes = new DefaultComboBoxModel<>();
-        universidad.getEstudiantes().stream()
-                .filter(e -> e.getCarrera() != null)
-                .forEach(modelEstudiantes::addElement);
-        VerFinEstudianteCB.setModel(modelEstudiantes);
-    }
-
-
-
-
-    private void darAltaMateria() {
-        try {
-            String idStr = AltaMatIdMateriaJT.getText().trim();
-            String nombre = AltaMatnombreJT.getText().trim();
-            String cuatrimestreStr = AltaMatNumCuatrimestreJT.getText().trim();
-
-            if (idStr.isEmpty() || nombre.isEmpty() || cuatrimestreStr.isEmpty()) {
-                JOptionPane.showMessageDialog(null,
-                        "Todos los campos son obligatorios",
-                        "Error de validación",
-                        JOptionPane.ERROR_MESSAGE);
-                return;
-            }
-
-            int id, cuatrimestre;
-
-            // chequeo de integer
-            try {
-                id = Integer.parseInt(idStr);
-                cuatrimestre = Integer.parseInt(cuatrimestreStr);
-                if (id <= 0 || cuatrimestre <= 0 || cuatrimestre > 10) {
-                    throw new NumberFormatException();
-                }
-            } catch (NumberFormatException e) {
-                JOptionPane.showMessageDialog(null,
-                        "El ID debe ser positivo y el cuatrimestre entre 1 y 10",
-                        "Error de validación",
-                        JOptionPane.ERROR_MESSAGE);
-                return;
-            }
-
-            // Verificar si la materia ya existe
-            boolean materiaExiste = universidad.getCarreras().stream()
-                    .flatMap(carrera -> carrera.getPlanEstudio().getMateriasObligatorias().stream())
-                    .anyMatch(m -> m.getId().equals(id)) ||
-                    universidad.getCarreras().stream()
-                            .flatMap(carrera -> carrera.getPlanEstudio().getMateriasOptativas().stream())
-                            .anyMatch(m -> m.getId().equals(id));
-
-            if (materiaExiste) {
-                JOptionPane.showMessageDialog(null,
-                        "Ya existe una materia con ese ID",
-                        "Materia duplicada",
-                        JOptionPane.WARNING_MESSAGE);
-                return;
-            }
-
-            List<Materia> correlativas = obtenerCorrelativasSeleccionadas();
-            Materia nuevaMateria = new Materia(nombre, id, cuatrimestre);
-            nuevaMateria.setCorrelativas(correlativas);
-
-
-            // Agregar la materia a la universidad (independiente de carreras)
-            universidad.agregarMateria(nuevaMateria);
-
-            JOptionPane.showMessageDialog(null,
-                    "Materia agregada correctamente:\n" + nuevaMateria.toString(),
-                    "Alta exitosa",
-                    JOptionPane.INFORMATION_MESSAGE);
-
-            limpiarCamposMateria();
-            actualizarListaCorrelativas();
-            Consola.append("Materia agregada: " + nuevaMateria.toString() + "\n");
-
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null,
-                    "Error al agregar materia: " + e.getMessage(),
-                    "Error",
-                    JOptionPane.ERROR_MESSAGE);
-        }
-
-    }
-
-    private void limpiarCamposMateria() {
-        AltaMatIdMateriaJT.setText("");
-        AltaMatnombreJT.setText("");
-        AltaMatNumCuatrimestreJT.setText("");
-        AltaMatIdMateriaJT.requestFocus();
-    }
-
-    private void actualizarListaCorrelativas() {
-        DefaultListModel<Materia> model = new DefaultListModel<>();
-
-        universidad.getMaterias().forEach(model::addElement);
-
-        AltaMatCorrelativasJList.setModel(model);
-    }
-
-    private List<Materia> obtenerCorrelativasSeleccionadas() {
-        List<Materia> correlativas = new java.util.ArrayList<>();
-
-        int[] selectedIndices = AltaMatCorrelativasJList.getSelectedIndices();
-        for (int index : selectedIndices) {
-            Materia materia = (Materia) AltaMatCorrelativasJList.getModel().getElementAt(index);
-            correlativas.add(materia);
-        }
-
-        return correlativas;
-    }
-
-
-
-
-
-
-
-    ///      Metodos de alta de estudiante.       ///
-    private void darAltaEstudiante() {
-        try {
-
-            String nombre = AltaEstNombreJT.getText().trim();
-            String apellido = AltaEstApellidoJT.getText().trim();
-            String dniStr = AltaEstDniJT.getText().trim();
-
-            // Validar que los campos no estén vacíos
-            if (nombre.isEmpty() || apellido.isEmpty() || dniStr.isEmpty()) {
-                JOptionPane.showMessageDialog(null,
-                        "Todos los campos son obligatorios",
-                        "Error de validación",
-                        JOptionPane.ERROR_MESSAGE);
-                return;
-            }
-
-            // Validar que el DNI sea un número válido
-            long dni;
-            try {
-                dni = Long.parseLong(dniStr);
-                if (dni <= 0) {
-                    throw new NumberFormatException();
-                }
-            } catch (NumberFormatException e) {
-                JOptionPane.showMessageDialog(null,
-                        "El DNI debe ser un número positivo válido",
-                        "Error de validación",
-                        JOptionPane.ERROR_MESSAGE);
-                return;
-            }
-
-            // Verificar si el estudiante ya existe
-            boolean estudianteExiste = universidad.getEstudiantes().stream()
-                    .anyMatch(e -> e.getDni() == dni);
-
-            if (estudianteExiste) {
-                JOptionPane.showMessageDialog(null,
-                        "Ya existe un estudiante con ese DNI",
-                        "Estudiante duplicado",
-                        JOptionPane.WARNING_MESSAGE);
-                return;
-            }
-
-            // Crear el estudiante y agregarlo a la universidad
-            Estudiante nuevoEstudiante = new Estudiante(nombre, apellido, dni);
-            universidad.agregarEstudiante(nuevoEstudiante);
-
-            // Mostrar mensaje de éxito
-            JOptionPane.showMessageDialog(null,
-                    "Estudiante agregado correctamente:\n" + nuevoEstudiante.toString(),
-                    "Alta exitosa",
-                    JOptionPane.INFORMATION_MESSAGE);
-
-            // Limpiar campos
-            limpiarCamposEstudiante();
-
-            // Mostrar en la consola
-            Consola.append("Estudiante agregado: " + nuevoEstudiante.toString() + "\n");
-
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null,
-                    "Error al agregar estudiante: " + e.getMessage(),
-                    "Error",
-                    JOptionPane.ERROR_MESSAGE);
-        }
-    }
-
-    // limpiar los campos del formulario de estudiante
-    private void limpiarCamposEstudiante() {
-        AltaEstNombreJT.setText("");
-        AltaEstApellidoJT.setText("");
-        AltaEstDniJT.setText("");
-        AltaEstNombreJT.requestFocus();
     }
 
 
@@ -552,16 +229,6 @@ public class GuiUniversidad {
     }
 
 
-
-
-
-
-
-
-    ///  PRECARGA DE DATOS
-    ///
-
-    // Agregar este mEtodo en GuiUniversidad
     private void precargarDatos() {
         precargarEstrategias();
         PrecargaMain.precargarDatos(universidad, Consola);

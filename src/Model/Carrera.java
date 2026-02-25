@@ -36,10 +36,8 @@ public class Carrera {
 
     @Override
     public String toString() {
-        return "Carrera{" +
-                "nombre='" + nombre + '\'' +
-                ", id=" + id +
-                '}';
+        return nombre + "("+id+")";
+
     }
 
 
