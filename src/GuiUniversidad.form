@@ -42,16 +42,16 @@
               <text value="Alta Materia"/>
             </properties>
           </component>
+          <component id="31307" class="javax.swing.JButton" binding="InscripcionEstudianteButton">
+            <constraints/>
+            <properties>
+              <text value="Inscripcion a Carrera"/>
+            </properties>
+          </component>
           <component id="6ea55" class="javax.swing.JButton" binding="InscripcionAMateriaButton">
             <constraints/>
             <properties>
               <text value="Inscripcion a Materia"/>
-            </properties>
-          </component>
-          <component id="31307" class="javax.swing.JButton" binding="InscripcionEstudianteButton">
-            <constraints/>
-            <properties>
-              <text value="Inscripcion Estudiante"/>
             </properties>
           </component>
           <component id="6e74e" class="javax.swing.JButton" binding="verificarFinalizadaButton" default-binding="true">
@@ -255,7 +255,7 @@
                       <focusable value="false"/>
                       <margin top="5" left="0" bottom="5" right="10"/>
                       <name value="JTextPrincipal"/>
-                      <rows value="4"/>
+                      <rows value="8"/>
                       <tabSize value="12"/>
                       <text value=""/>
                     </properties>
@@ -659,8 +659,8 @@
             </properties>
             <border type="line" title="Alta Materia" title-justification="2" title-position="2">
               <font/>
-              <title-color color="-3092263"/>
-              <color color="-3092263"/>
+              <title-color color="-16053481"/>
+              <color color="-16053481"/>
             </border>
             <children>
               <component id="db110" class="javax.swing.JLabel">

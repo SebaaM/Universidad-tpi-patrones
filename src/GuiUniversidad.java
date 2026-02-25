@@ -74,7 +74,10 @@ public class GuiUniversidad {
 
         // BOTONES DEL PANEL PESTAÑA
         AltaEstudianteButton.addActionListener(e -> mostrarPanel(AltaEstudiantePanel));
-        AltaMateriaButton.addActionListener(e -> mostrarPanel(AltaMateriaPanel));
+        AltaMateriaButton.addActionListener(e -> {
+            actualizarListaCorrelativas();
+            mostrarPanel(AltaMateriaPanel);
+        });
         AltaCarreraButton.addActionListener(e -> {
             actualizarListasCrearPlan();
             mostrarPanel(CrearPlanPanel);
