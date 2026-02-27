@@ -4,16 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d02309d3-7c2a-4564-a3da-62178968c33e" name="Changes" comment="se modularizo la logica de controladores">
+    <list default="true" id="d02309d3-7c2a-4564-a3da-62178968c33e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TPI-OBJETOS.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TPI-OBJETOS.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TPI-OBJETOS/GuiUniversidad.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TPI-OBJETOS/GuiUniversidad.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/Carrera.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/Carrera.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/Materia.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/Materia.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GuiUniversidad.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/GuiUniversidad.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GuiUniversidad.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/GuiUniversidad.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GuiUniversidad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GuiUniversidad.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Carrera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Carrera.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/EstadoState/CursadaAprobada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/EstadoState/CursadaAprobada.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/EstadoState/ParcialAprobado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/EstadoState/ParcialAprobado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Carrera.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Carrera.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/EstadoState/CursadaAprobada.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/EstadoState/CursadaAprobada.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Materia.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Materia.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Materia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Materia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PrecargaMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PrecargaMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PrecargaMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/PrecargaMain.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +29,7 @@
         <option value="package-info" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -64,35 +68,85 @@
     <option name="showLibraryContents" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.GuiUniversidad.executor&quot;: &quot;Run&quot;,
-    &quot;Application.das.executor&quot;: &quot;Run&quot;,
-    &quot;JAR Application.jgoodies-forms-1.9.0.jar.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;OverrideImplement.generate.javadoc&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW&quot;: &quot;false&quot;,
-    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.STATE&quot;: &quot;right&quot;,
-    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH&quot;: &quot;179&quot;,
-    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW&quot;: &quot;true&quot;,
-    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.STATE&quot;: &quot;left&quot;,
-    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;294&quot;,
-    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.CursadaController.executor": "Run",
+    "Application.GuiUniversidad.executor": "Run",
+    "Application.das.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "JAR Application.jgoodies-forms-1.9.0.jar.executor": "Run",
+    "JUnit.DirectorStrategyTest.revisarInscripcion.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "OverrideImplement.generate.javadoc": "true",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW": "true",
+    "UI_DESIGNER_EDITOR_MODE.PaletteManager.STATE": "right",
+    "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "179",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW": "true",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.STATE": "left",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "294",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "create.test.in.the.same.root": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
-  <component name="RunManager" selected="Application.GuiUniversidad">
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\pity_\OneDrive\Desktop\archivos_uni\TPI-OBJETOS\src" />
+      <recent name="C:\Users\pity_\OneDrive\Desktop\archivos_uni\TPI-OBJETOS" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="Model.InscripcionStrategy" />
+      <recent name="Model" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.DirectorStrategyTest.revisarInscripcion">
+    <configuration name="CursadaController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Controllers.CursadaController" />
+      <module name="TPI-OBJETOS" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="GuiUniversidad" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GuiUniversidad" />
       <module name="TPI-OBJETOS" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DirectorStrategyTest.revisarInscripcion" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TPI-OBJETOS" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.DirectorStrategyTest" />
+      <option name="METHOD_NAME" value="revisarInscripcion" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -103,12 +157,16 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Application.CursadaController" />
       <item itemvalue="Application.GuiUniversidad" />
       <item itemvalue="JAR Application.jgoodies-forms-1.9.0.jar" />
+      <item itemvalue="JUnit.DirectorStrategyTest.revisarInscripcion" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DirectorStrategyTest.revisarInscripcion" />
         <item itemvalue="Application.GuiUniversidad" />
+        <item itemvalue="Application.CursadaController" />
         <item itemvalue="JAR Application.jgoodies-forms-1.9.0.jar" />
       </list>
     </recent_temporary>
@@ -305,7 +363,15 @@
       <option name="project" value="LOCAL" />
       <updated>1771987652938</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="se arreglo toString y se elimino metodos duplicados">
+      <option name="closed" value="true" />
+      <created>1771989271121</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1771989271121</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -355,7 +421,8 @@
     <MESSAGE value="Fix: Loyout" />
     <MESSAGE value="Se movio la precarga de datos." />
     <MESSAGE value="se modularizo la logica de controladores" />
-    <option name="LAST_COMMIT_MESSAGE" value="se modularizo la logica de controladores" />
+    <MESSAGE value="se arreglo toString y se elimino metodos duplicados" />
+    <option name="LAST_COMMIT_MESSAGE" value="se arreglo toString y se elimino metodos duplicados" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

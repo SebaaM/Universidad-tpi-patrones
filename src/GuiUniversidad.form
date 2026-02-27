@@ -60,6 +60,12 @@
               <text value="Verificar Finalizada"/>
             </properties>
           </component>
+          <component id="3c3ce" class="javax.swing.JButton" binding="DemostrarStateButton">
+            <constraints/>
+            <properties>
+              <text value="Demostracion State"/>
+            </properties>
+          </component>
         </children>
       </grid>
       <grid id="f03b1" binding="ContentPanel" layout-manager="FormLayout">

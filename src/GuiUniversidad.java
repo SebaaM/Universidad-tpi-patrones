@@ -1,13 +1,10 @@
 import Model.*;
-import Model.BuilderPlan.PlanBuild;
-import Model.InscripcionStrategy.*;
 import Controllers.MateriaController;
 import Controllers.EstudianteController;
 import Controllers.CarreraController;
+import Controllers.CursadaController;
 
 import javax.swing.*;
-import java.util.ArrayList;
-import java.util.List;
 
 public class GuiUniversidad {
 
@@ -59,6 +56,7 @@ public class GuiUniversidad {
     private JTextField textField1;
     private JTextField CrearPlNombreJT;
     private JTextField CrearPlIDJT;
+    private JButton DemostrarStateButton;
 
     // ATRIBUTOS DE LA UNIVERSIDAD
     private final Universidad universidad;
@@ -99,6 +97,9 @@ public class GuiUniversidad {
         verificarFinalizadaButton.addActionListener(e -> {
             estudianteController.actualizarComboBoxVerificarFinalizada();
             mostrarPanel(VerificarFinalizada);
+        });
+        DemostrarStateButton.addActionListener(e -> {
+            new CursadaController().demostracionState();
         });
         InscripcionAMateriaButton.addActionListener(e -> {
             materiaController.actualizarComboBoxesInscripcionMateria();
