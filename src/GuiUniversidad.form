@@ -256,11 +256,13 @@
                       <alignmentX value="1.0"/>
                       <alignmentY value="1.0"/>
                       <background color="-2958891"/>
-                      <columns value="60"/>
+                      <columns value="80"/>
                       <editable value="false"/>
                       <focusable value="false"/>
+                      <font name="Consolas" size="14" style="0"/>
                       <margin top="5" left="0" bottom="5" right="10"/>
                       <name value="JTextPrincipal"/>
+                      <requestFocusEnabled value="true"/>
                       <rows value="8"/>
                       <tabSize value="12"/>
                       <text value=""/>
