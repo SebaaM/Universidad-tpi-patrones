@@ -9,6 +9,7 @@ public class Inscripto extends EstadoCursada{
     @Override
     public void cargarParcial(double nota, Cursada cursada){
         if (nota >= 8){
+            cursada.setCursadaAprobada(true);
             cursada.setCursadaAprobadaTotal(true);
             cursada.setEstado(new Promocionada());
         }

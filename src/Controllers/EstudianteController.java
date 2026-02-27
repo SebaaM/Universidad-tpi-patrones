@@ -213,10 +213,12 @@ public class EstudianteController {
                     .toList();
             
             boolean obligatoriasAprobadas = plan.getMateriasObligatorias().stream()
-                    .allMatch(materiasAprobadas::contains);
+                    .anyMatch(materiaObligatoria -> materiasAprobadas.stream()
+                            .anyMatch(materiaAprobada -> materiaAprobada.getId().equals(materiaObligatoria.getId())));
             
             long optativasAprobadas = plan.getMateriasOptativas().stream()
-                    .filter(materiasAprobadas::contains)
+                    .filter(materiaOptativa -> materiasAprobadas.stream()
+                            .anyMatch(materiaAprobada -> materiaAprobada.getId().equals(materiaOptativa.getId())))
                     .count();
             
             boolean optativasSuficientes = optativasAprobadas >= plan.getCantOpcionales();
