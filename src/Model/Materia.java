@@ -60,4 +60,8 @@ public class Materia {
     public String toString() {
         return String.format("%s(%d)",nombre , id);
     }
+
+    public void agregarCorrelativa(Materia materiaCorrelativa) {
+        this.correlativas.add(materiaCorrelativa);
+    }
 }
