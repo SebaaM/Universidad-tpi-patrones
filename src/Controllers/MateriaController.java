@@ -165,6 +165,10 @@ public class MateriaController {
                         "El estudiante debe estar inscripto en una carrera para inscribirse a materias",
                         "Error de inscripción",
                         JOptionPane.WARNING_MESSAGE);
+                
+                // Mostrar información por consola
+                consola.append("ERROR: El estudiante " + estudiante.toString() +
+                        " no está inscripto en ninguna carrera.\n");
                 return;
             }
 
@@ -180,6 +184,12 @@ public class MateriaController {
                         "La materia no pertenece al plan de estudios de la carrera del estudiante",
                         "Error de inscripción",
                         JOptionPane.WARNING_MESSAGE);
+                
+                // Mostrar información y materias disponibles por consola
+                consola.append("ERROR: La materia " + materia.toString() +
+                        " no pertenece a la carrera " + estudiante.getCarrera().getNombre() + 
+                        " del estudiante " + estudiante.toString() + "\n");
+                mostrarMateriasDisponiblesPorConsola(estudiante, plan);
                 return;
             }
 
@@ -189,21 +199,56 @@ public class MateriaController {
                         "El estudiante ya está inscripto en esta materia",
                         "Error de inscripción",
                         JOptionPane.WARNING_MESSAGE);
+                
+                // Mostrar información y materias disponibles por consola
+                consola.append("ERROR: El estudiante " + estudiante.toString() +
+                        " ya está inscripto en " + materia.toString() + "\n");
+                mostrarMateriasDisponiblesPorConsola(estudiante, plan);
                 return;
             }
 
             // Verificar correlativas
+            List<Materia> correlativasPendientes = new ArrayList<>();
             for (Materia correlativa : materia.getCorrelativas()) {
-                if (!estudiante.getCursadasInscriptas().stream()
+                boolean correlativaAprobada = estudiante.getCursadasInscriptas().stream()
                         .filter(c -> c.isCursadaAprobadaTotal())
                         .map(Cursada::getMateria)
-                        .anyMatch(m -> m.getId().equals(correlativa.getId()))) {
-                    JOptionPane.showMessageDialog(null,
-                            "No cumple con las correlativas: " + correlativa.getNombre(),
-                            "Error de inscripción",
-                            JOptionPane.WARNING_MESSAGE);
-                    return;
+                        .anyMatch(m -> m.getId().equals(correlativa.getId()));
+                
+                if (!correlativaAprobada) {
+                    correlativasPendientes.add(correlativa);
                 }
+            }
+            
+            if (!correlativasPendientes.isEmpty()) {
+                StringBuilder mensaje = new StringBuilder();
+                mensaje.append("No cumple con las correlativas: ");
+                for (int i = 0; i < correlativasPendientes.size(); i++) {
+                    mensaje.append(correlativasPendientes.get(i).getNombre());
+                    if (i < correlativasPendientes.size() - 1) {
+                        mensaje.append(", ");
+                    }
+                }
+                
+                JOptionPane.showMessageDialog(null,
+                        mensaje.toString(),
+                        "Error de inscripción",
+                        JOptionPane.WARNING_MESSAGE);
+                
+                // Mostrar información detallada y materias disponibles por consola
+                consola.append("ERROR: El estudiante " + estudiante.toString() +
+                        " no cumple correlativas para " + materia.toString() + "\n");
+                consola.append("   Correlativas pendientes: ");
+                for (int i = 0; i < correlativasPendientes.size(); i++) {
+                    consola.append(correlativasPendientes.get(i).toString());
+                    if (i < correlativasPendientes.size() - 1) {
+                        consola.append(", ");
+                    }
+                }
+                consola.append("\n");
+                
+                mostrarMateriasDisponiblesPorConsola(estudiante, plan);
+                return;
             }
 
             // Realizar la inscripción
@@ -216,14 +261,47 @@ public class MateriaController {
                     JOptionPane.INFORMATION_MESSAGE);
 
             limpiarCamposInscripcionMateria();
-            consola.append("Estudiante inscripto a materia: " + estudiante.toString() + " -> " + materia.toString() + "\n");
+            consola.append("ÉXITO: Estudiante " + estudiante.toString() +
+                    " inscripto en " + materia.toString() + "\n");
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null,
                     "Error al inscribir estudiante: " + e.getMessage(),
                     "Error",
                     JOptionPane.ERROR_MESSAGE);
+            consola.append("ERROR EXCEPCIÓN: " + e.getMessage() + "\n");
         }
+    }
+    
+    private void mostrarMateriasDisponiblesPorConsola(Estudiante estudiante, PlanDeEstudio plan) {
+        List<Materia> materiasDisponibles = new ArrayList<>();
+        
+        // Verificar materias obligatorias
+        for (Materia materia : plan.getMateriasObligatorias()) {
+            if (puedeCursarMateria(estudiante, materia)) {
+                materiasDisponibles.add(materia);
+            }
+        }
+        
+        // Verificar materias optativas
+        for (Materia materia : plan.getMateriasOptativas()) {
+            if (puedeCursarMateria(estudiante, materia)) {
+                materiasDisponibles.add(materia);
+            }
+        }
+        
+        consola.append("\n📋 MATERIAS DISPONIBLES PARA " + estudiante.toString() + ":\n");
+        
+        if (materiasDisponibles.isEmpty()) {
+            consola.append("    No hay materias disponibles para cursar en este momento.\n");
+        } else {
+            for (int i = 0; i < materiasDisponibles.size(); i++) {
+                Materia materia = materiasDisponibles.get(i);
+                String tipo = plan.getMateriasObligatorias().contains(materia) ? "[OBLIGATORIA]" : "[OPTATIVA]";
+                consola.append("    " + (i + 1) + ". " + materia.toString() + " " + tipo + "\n");
+            }
+        }
+        consola.append("   ----------------------------------------\n\n");
     }
 
     public void limpiarCamposInscripcionMateria() {
@@ -252,14 +330,41 @@ public class MateriaController {
             // Obtener materias de la carrera del estudiante
             PlanDeEstudio plan = estudianteSeleccionado.getCarrera().getPlanEstudio();
             
-            // Agregar materias obligatorias
-            plan.getMateriasObligatorias().forEach(modelMaterias::addElement);
+            // Agregar materias obligatorias disponibles
+            for (Materia materia : plan.getMateriasObligatorias()) {
+                if (puedeCursarMateria(estudianteSeleccionado, materia)) {
+                    modelMaterias.addElement(materia);
+                }
+            }
             
-            // Agregar materias optativas
-            plan.getMateriasOptativas().forEach(modelMaterias::addElement);
+            // Agregar materias optativas disponibles
+            for (Materia materia : plan.getMateriasOptativas()) {
+                if (puedeCursarMateria(estudianteSeleccionado, materia)) {
+                    modelMaterias.addElement(materia);
+                }
+            }
+            
+            // Mostrar información por consola de las materias disponibles
+            if (modelMaterias.getSize() > 0) {
+                consola.append("\n📋 MATERIAS DISPONIBLES PARA " + estudianteSeleccionado.toString() + ":\n");
+                for (int i = 0; i < modelMaterias.getSize(); i++) {
+                    Materia materia = modelMaterias.getElementAt(i);
+                    String tipo = plan.getMateriasObligatorias().contains(materia) ? "[OBLIGATORIA]" : "[OPTATIVA]";
+                    consola.append("    " + (i + 1) + ". " + materia.toString() + " " + tipo + "\n");
+                }
+                consola.append("   ----------------------------------------\n");
+            } else {
+                consola.append("\n⚠️ No hay materias disponibles para inscribir a " + estudianteSeleccionado.toString() + "\n");
+                consola.append("   (Revise correlativas pendientes o materias ya cursadas)\n");
+                consola.append("   ----------------------------------------\n");
+            }
         } else {
-            // Si no hay estudiante seleccionado, mostrar todas las materias
-            universidad.getMaterias().forEach(modelMaterias::addElement);
+            // Si no hay estudiante seleccionado, mostrar mensaje
+            if (estudianteSeleccionado == null) {
+                consola.append("ℹ️ Seleccione un estudiante para ver las materias disponibles\n");
+            } else if (estudianteSeleccionado.getCarrera() == null) {
+                consola.append("⚠️ El estudiante " + estudianteSeleccionado.toString() + " no está inscripto en ninguna carrera\n");
+            }
         }
         
         inscMatMateriaCB.setModel(modelMaterias);
@@ -268,5 +373,27 @@ public class MateriaController {
     // metodo para configurar el listener que actualiza las materias cuando cambia el estudiante
     public void configurarListenerEstudiante() {
         inscMatAlumnoCB.addActionListener(e -> actualizarComboBoxMateriasPorEstudiante());
+    }
+    
+    private boolean puedeCursarMateria(Estudiante estudiante, Materia materia) {
+        // Verificar si ya está inscripto
+        if (estudiante.getCursadasInscriptas().stream()
+                .anyMatch(c -> c.getMateria().getId().equals(materia.getId()))) {
+            return false;
+        }
+
+        // Verificar correlativas
+        for (Materia correlativa : materia.getCorrelativas()) {
+            boolean correlativaAprobada = estudiante.getCursadasInscriptas().stream()
+                    .filter(c -> c.isCursadaAprobadaTotal())
+                    .map(Cursada::getMateria)
+                    .anyMatch(m -> m.getId().equals(correlativa.getId()));
+            
+            if (!correlativaAprobada) {
+                return false;
+            }
+        }
+
+        return true;
     }
 }
