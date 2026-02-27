@@ -965,24 +965,15 @@
                 </constraints>
                 <properties>
                   <autoscrolls value="true"/>
+                  <opaque value="true"/>
                 </properties>
                 <border type="none"/>
                 <children>
                   <component id="902f6" class="javax.swing.JList" binding="CrearPlMateriaObligatoriaJlist">
                     <constraints/>
                     <properties>
-                      <autoscrolls value="true"/>
-                      <doubleBuffered value="false"/>
-                      <dropMode value="INSERT"/>
-                      <inheritsPopupMenu value="false"/>
-                      <layoutOrientation value="0"/>
-                      <minimumSize width="50" height="80"/>
+                      <focusCycleRoot value="true"/>
                       <model/>
-                      <opaque value="true"/>
-                      <preferredSize width="25" height="120"/>
-                      <selectedIndex value="-1"/>
-                      <selectionMode value="2"/>
-                      <visibleRowCount value="4"/>
                     </properties>
                   </component>
                 </children>
@@ -1000,9 +991,8 @@
                   <component id="d7749" class="javax.swing.JList" binding="CrearPlMateriaOpcionalJList">
                     <constraints/>
                     <properties>
+                      <focusCycleRoot value="true"/>
                       <model/>
-                      <preferredSize width="25" height="120"/>
-                      <requestFocusEnabled value="true"/>
                     </properties>
                   </component>
                 </children>

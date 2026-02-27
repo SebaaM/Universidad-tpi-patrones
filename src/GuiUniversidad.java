@@ -157,6 +157,9 @@ public class GuiUniversidad {
             InscMatMateriaCB
         );
         
+        // Configurar listener para actualizar materias según el estudiante seleccionado
+        materiaController.configurarListenerEstudiante();
+        
         // Configurar EstudianteController con componentes de Interfaz
         estudianteController.setAltaEstudianteComponents(
             AltaEstNombreJT,

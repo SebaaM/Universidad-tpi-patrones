@@ -170,7 +170,12 @@ public class MateriaController {
 
             // Verificar si la materia pertenece a la carrera del estudiante
             PlanDeEstudio plan = estudiante.getCarrera().getPlanEstudio();
-            if (!plan.getMateriasObligatorias().contains(materia) && !plan.getMateriasOptativas().contains(materia)) {
+            boolean materiaEnCarrera = plan.getMateriasObligatorias().stream()
+                    .anyMatch(m -> m.getId().equals(materia.getId())) ||
+                    plan.getMateriasOptativas().stream()
+                    .anyMatch(m -> m.getId().equals(materia.getId()));
+            
+            if (!materiaEnCarrera) {
                 JOptionPane.showMessageDialog(null,
                         "La materia no pertenece al plan de estudios de la carrera del estudiante",
                         "Error de inscripción",
@@ -179,7 +184,7 @@ public class MateriaController {
             }
 
             // Verificar si ya está inscripto
-            if (estudiante.getCursadasInscriptas().stream().anyMatch(c -> c.getMateria().equals(materia))) {
+            if (estudiante.getCursadasInscriptas().stream().anyMatch(c -> c.getMateria().getId().equals(materia.getId()))) {
                 JOptionPane.showMessageDialog(null,
                         "El estudiante ya está inscripto en esta materia",
                         "Error de inscripción",
@@ -192,8 +197,7 @@ public class MateriaController {
                 if (!estudiante.getCursadasInscriptas().stream()
                         .filter(c -> c.isCursadaAprobadaTotal())
                         .map(Cursada::getMateria)
-                        .toList()
-                        .contains(correlativa)) {
+                        .anyMatch(m -> m.getId().equals(correlativa.getId()))) {
                     JOptionPane.showMessageDialog(null,
                             "No cumple con las correlativas: " + correlativa.getNombre(),
                             "Error de inscripción",
@@ -228,15 +232,41 @@ public class MateriaController {
     }
 
     public void actualizarComboBoxesInscripcionMateria() {
-        // Actualizar combo boxes con datos disponibles
+        // Actualizar combo box de estudiantes
         DefaultComboBoxModel<Estudiante> modelEstudiantes = new DefaultComboBoxModel<>();
         universidad.getEstudiantes().stream()
                 .filter(e -> e.getCarrera() != null)
                 .forEach(modelEstudiantes::addElement);
         inscMatAlumnoCB.setModel(modelEstudiantes);
 
+        // Actualizar combo box de materias según el estudiante seleccionado
+        actualizarComboBoxMateriasPorEstudiante();
+    }
+    
+    private void actualizarComboBoxMateriasPorEstudiante() {
         DefaultComboBoxModel<Materia> modelMaterias = new DefaultComboBoxModel<>();
-        universidad.getMaterias().forEach(modelMaterias::addElement);
+        
+        Estudiante estudianteSeleccionado = (Estudiante) inscMatAlumnoCB.getSelectedItem();
+        
+        if (estudianteSeleccionado != null && estudianteSeleccionado.getCarrera() != null) {
+            // Obtener materias de la carrera del estudiante
+            PlanDeEstudio plan = estudianteSeleccionado.getCarrera().getPlanEstudio();
+            
+            // Agregar materias obligatorias
+            plan.getMateriasObligatorias().forEach(modelMaterias::addElement);
+            
+            // Agregar materias optativas
+            plan.getMateriasOptativas().forEach(modelMaterias::addElement);
+        } else {
+            // Si no hay estudiante seleccionado, mostrar todas las materias
+            universidad.getMaterias().forEach(modelMaterias::addElement);
+        }
+        
         inscMatMateriaCB.setModel(modelMaterias);
+    }
+    
+    // metodo para configurar el listener que actualiza las materias cuando cambia el estudiante
+    public void configurarListenerEstudiante() {
+        inscMatAlumnoCB.addActionListener(e -> actualizarComboBoxMateriasPorEstudiante());
     }
 }
