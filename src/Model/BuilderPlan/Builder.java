@@ -4,8 +4,6 @@ import Model.InscripcionStrategy.CondicionInscripcion;
 import Model.Materia;
 import Model.PlanDeEstudio;
 
-import java.util.List;
-
 public interface Builder {
     public Builder agregarMateriaObligatoria(Materia materiasObligatorias);
     public Builder agregarMateriaOpcional(Materia materiasOptativas);

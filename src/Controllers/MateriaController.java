@@ -1,6 +1,9 @@
 package Controllers;
 
+import Exceptions.MateriaException;
+import Exceptions.ValidacionException;
 import Model.*;
+
 import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -48,49 +51,18 @@ public class MateriaController {
     
     public void darAltaMateria() {
         try {
+            validarDatosAltaMateria();
+            
             String idStr = altaMatIdJT.getText().trim();
             String nombre = altaMatNombreJT.getText().trim();
             String cuatrimestreStr = altaMatCuatrimestreJT.getText().trim();
 
-            if (idStr.isEmpty() || nombre.isEmpty() || cuatrimestreStr.isEmpty()) {
-                JOptionPane.showMessageDialog(null,
-                        "Todos los campos son obligatorios",
-                        "Error de validación",
-                        JOptionPane.ERROR_MESSAGE);
-                return;
-            }
-
-            int id, cuatrimestre;
-
-            // Validación de datos numéricos
-            try {
-                id = Integer.parseInt(idStr);
-                cuatrimestre = Integer.parseInt(cuatrimestreStr);
-                if (id <= 0 || cuatrimestre <= 0 || cuatrimestre > 10) {
-                    throw new NumberFormatException();
-                }
-            } catch (NumberFormatException e) {
-                JOptionPane.showMessageDialog(null,
-                        "El ID debe ser positivo y el cuatrimestre entre 1 y 10",
-                        "Error de validación",
-                        JOptionPane.ERROR_MESSAGE);
-                return;
-            }
+            int id = Integer.parseInt(idStr);
+            int cuatrimestre = Integer.parseInt(cuatrimestreStr);
 
             // Verificar si la materia ya existe
-            boolean materiaExiste = universidad.getCarreras().stream()
-                    .flatMap(carrera -> carrera.getPlanEstudio().getMateriasObligatorias().stream())
-                    .anyMatch(m -> m.getId().equals(id)) ||
-                    universidad.getCarreras().stream()
-                            .flatMap(carrera -> carrera.getPlanEstudio().getMateriasOptativas().stream())
-                            .anyMatch(m -> m.getId().equals(id));
-
-            if (materiaExiste) {
-                JOptionPane.showMessageDialog(null,
-                        "Ya existe una materia con ese ID",
-                        "Materia duplicada",
-                        JOptionPane.WARNING_MESSAGE);
-                return;
+            if (existeMateriaConId(id)) {
+                throw new MateriaException("Ya existe una materia con ese ID");
             }
 
             List<Materia> correlativas = obtenerCorrelativasSeleccionadas();
@@ -109,12 +81,57 @@ public class MateriaController {
             actualizarListaCorrelativas();
             consola.append("Materia agregada: " + nuevaMateria.toString() + "\n");
 
+        } catch (ValidacionException e) {
+            JOptionPane.showMessageDialog(null,
+                    e.getMessage(),
+                    "Error de validación",
+                    JOptionPane.ERROR_MESSAGE);
+        } catch (MateriaException e) {
+            JOptionPane.showMessageDialog(null,
+                    e.getMessage(),
+                    "Materia duplicada",
+                    JOptionPane.WARNING_MESSAGE);
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null,
+                    "El ID debe ser positivo y el cuatrimestre entre 1 y 10",
+                    "Error de validación",
+                    JOptionPane.ERROR_MESSAGE);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null,
                     "Error al agregar materia: " + e.getMessage(),
                     "Error",
                     JOptionPane.ERROR_MESSAGE);
         }
+    }
+    
+    private void validarDatosAltaMateria() throws ValidacionException {
+        String idStr = altaMatIdJT.getText().trim();
+        String nombre = altaMatNombreJT.getText().trim();
+        String cuatrimestreStr = altaMatCuatrimestreJT.getText().trim();
+
+        if (idStr.isEmpty() || nombre.isEmpty() || cuatrimestreStr.isEmpty()) {
+            throw new ValidacionException("Todos los campos son obligatorios");
+        }
+
+        int id, cuatrimestre;
+        try {
+            id = Integer.parseInt(idStr);
+            cuatrimestre = Integer.parseInt(cuatrimestreStr);
+            if (id <= 0 || cuatrimestre <= 0 || cuatrimestre > 10) {
+                throw new NumberFormatException();
+            }
+        } catch (NumberFormatException e) {
+            throw new ValidacionException("El ID debe ser positivo y el cuatrimestre entre 1 y 10");
+        }
+    }
+    
+    private boolean existeMateriaConId(int id) {
+        return universidad.getCarreras().stream()
+                .flatMap(carrera -> carrera.getPlanEstudio().getMateriasObligatorias().stream())
+                .anyMatch(m -> m.getId().equals(id)) ||
+                universidad.getCarreras().stream()
+                        .flatMap(carrera -> carrera.getPlanEstudio().getMateriasOptativas().stream())
+                        .anyMatch(m -> m.getId().equals(id));
     }
 
     public void limpiarCamposMateria() {
@@ -151,104 +168,31 @@ public class MateriaController {
             Estudiante estudiante = (Estudiante) inscMatAlumnoCB.getSelectedItem();
             Materia materia = (Materia) inscMatMateriaCB.getSelectedItem();
 
-            if (estudiante == null || materia == null) {
-                JOptionPane.showMessageDialog(null,
-                        "Debe seleccionar un estudiante y una materia",
-                        "Error de validación",
-                        JOptionPane.ERROR_MESSAGE);
-                return;
-            }
+            validarDatosInscripcionMateria(estudiante, materia);
 
             // Verificar si el estudiante tiene carrera
             if (estudiante.getCarrera() == null) {
-                JOptionPane.showMessageDialog(null,
-                        "El estudiante debe estar inscripto en una carrera para inscribirse a materias",
-                        "Error de inscripción",
-                        JOptionPane.WARNING_MESSAGE);
-                
-                // Mostrar información por consola
-                consola.append("ERROR: El estudiante " + estudiante.toString() +
-                        " no está inscripto en ninguna carrera.\n");
-                return;
+                throw new MateriaException("El estudiante debe estar inscripto en una carrera para inscribirse a materias");
             }
 
             // Verificar si la materia pertenece a la carrera del estudiante
-            PlanDeEstudio plan = estudiante.getCarrera().getPlanEstudio();
-            boolean materiaEnCarrera = plan.getMateriasObligatorias().stream()
-                    .anyMatch(m -> m.getId().equals(materia.getId())) ||
-                    plan.getMateriasOptativas().stream()
-                    .anyMatch(m -> m.getId().equals(materia.getId()));
-            
-            if (!materiaEnCarrera) {
-                JOptionPane.showMessageDialog(null,
-                        "La materia no pertenece al plan de estudios de la carrera del estudiante",
-                        "Error de inscripción",
-                        JOptionPane.WARNING_MESSAGE);
-                
-                // Mostrar información y materias disponibles por consola
-                consola.append("ERROR: La materia " + materia.toString() +
-                        " no pertenece a la carrera " + estudiante.getCarrera().getNombre() + 
-                        " del estudiante " + estudiante.toString() + "\n");
-                mostrarMateriasDisponiblesPorConsola(estudiante, plan);
-                return;
+            if (!materiaPerteneceACarrera(estudiante, materia)) {
+                throw new MateriaException("La materia no pertenece al plan de estudios de la carrera del estudiante");
             }
 
             // Verificar si ya está inscripto
-            if (estudiante.getCursadasInscriptas().stream().anyMatch(c -> c.getMateria().getId().equals(materia.getId()))) {
-                JOptionPane.showMessageDialog(null,
-                        "El estudiante ya está inscripto en esta materia",
-                        "Error de inscripción",
-                        JOptionPane.WARNING_MESSAGE);
-                
-                // Mostrar información y materias disponibles por consola
-                consola.append("ERROR: El estudiante " + estudiante.toString() +
-                        " ya está inscripto en " + materia.toString() + "\n");
-                mostrarMateriasDisponiblesPorConsola(estudiante, plan);
-                return;
+            if (yaEstaInscripto(estudiante, materia)) {
+                throw new MateriaException("El estudiante ya está inscripto en esta materia");
             }
 
             // Verificar correlativas
-            List<Materia> correlativasPendientes = new ArrayList<>();
-            for (Materia correlativa : materia.getCorrelativas()) {
-                boolean correlativaAprobada = estudiante.getCursadasInscriptas().stream()
-                        .filter(c -> c.isCursadaAprobadaTotal())
-                        .map(Cursada::getMateria)
-                        .anyMatch(m -> m.getId().equals(correlativa.getId()));
-                
-                if (!correlativaAprobada) {
-                    correlativasPendientes.add(correlativa);
-                }
-            }
-            
+            List<Materia> correlativasPendientes = obtenerCorrelativasPendientes(estudiante, materia);
             if (!correlativasPendientes.isEmpty()) {
-                StringBuilder mensaje = new StringBuilder();
-                mensaje.append("No cumple con las correlativas: ");
-                for (int i = 0; i < correlativasPendientes.size(); i++) {
-                    mensaje.append(correlativasPendientes.get(i).getNombre());
-                    if (i < correlativasPendientes.size() - 1) {
-                        mensaje.append(", ");
-                    }
-                }
-                
-                JOptionPane.showMessageDialog(null,
-                        mensaje.toString(),
-                        "Error de inscripción",
-                        JOptionPane.WARNING_MESSAGE);
-                
-                // Mostrar información detallada y materias disponibles por consola
-                consola.append("ERROR: El estudiante " + estudiante.toString() +
-                        " no cumple correlativas para " + materia.toString() + "\n");
-                consola.append("   Correlativas pendientes: ");
-                for (int i = 0; i < correlativasPendientes.size(); i++) {
-                    consola.append(correlativasPendientes.get(i).toString());
-                    if (i < correlativasPendientes.size() - 1) {
-                        consola.append(", ");
-                    }
-                }
-                consola.append("\n");
-                
-                mostrarMateriasDisponiblesPorConsola(estudiante, plan);
-                return;
+                throw new MateriaException("No cumple con las correlativas: " + 
+                    correlativasPendientes.stream()
+                        .map(Materia::getNombre)
+                        .reduce((a, b) -> a + ", " + b)
+                        .orElse(""));
             }
 
             // Realizar la inscripción
@@ -264,6 +208,22 @@ public class MateriaController {
             consola.append("ÉXITO: Estudiante " + estudiante.toString() +
                     " inscripto en " + materia.toString() + "\n");
 
+        } catch (ValidacionException e) {
+            JOptionPane.showMessageDialog(null,
+                    e.getMessage(),
+                    "Error de validación",
+                    JOptionPane.ERROR_MESSAGE);
+        } catch (MateriaException e) {
+            JOptionPane.showMessageDialog(null,
+                    e.getMessage(),
+                    "Error de inscripción",
+                    JOptionPane.WARNING_MESSAGE);
+            
+            // Mostrar información detallada y materias disponibles por consola
+            Estudiante estudiante = (Estudiante) inscMatAlumnoCB.getSelectedItem();
+            if (estudiante != null && estudiante.getCarrera() != null) {
+                mostrarMateriasDisponiblesPorConsola(estudiante, estudiante.getCarrera().getPlanEstudio());
+            }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null,
                     "Error al inscribir estudiante: " + e.getMessage(),
@@ -271,6 +231,40 @@ public class MateriaController {
                     JOptionPane.ERROR_MESSAGE);
             consola.append("ERROR EXCEPCIÓN: " + e.getMessage() + "\n");
         }
+    }
+    
+    private void validarDatosInscripcionMateria(Estudiante estudiante, Materia materia) throws ValidacionException {
+        if (estudiante == null || materia == null) {
+            throw new ValidacionException("Debe seleccionar un estudiante y una materia");
+        }
+    }
+    
+    private boolean materiaPerteneceACarrera(Estudiante estudiante, Materia materia) {
+        PlanDeEstudio plan = estudiante.getCarrera().getPlanEstudio();
+        return plan.getMateriasObligatorias().stream()
+                .anyMatch(m -> m.getId().equals(materia.getId())) ||
+                plan.getMateriasOptativas().stream()
+                        .anyMatch(m -> m.getId().equals(materia.getId()));
+    }
+    
+    private boolean yaEstaInscripto(Estudiante estudiante, Materia materia) {
+        return estudiante.getCursadasInscriptas().stream()
+                .anyMatch(c -> c.getMateria().getId().equals(materia.getId()));
+    }
+    
+    private List<Materia> obtenerCorrelativasPendientes(Estudiante estudiante, Materia materia) {
+        List<Materia> correlativasPendientes = new ArrayList<>();
+        for (Materia correlativa : materia.getCorrelativas()) {
+            boolean correlativaAprobada = estudiante.getCursadasInscriptas().stream()
+                    .filter(c -> c.isCursadaAprobadaTotal())
+                    .map(Cursada::getMateria)
+                    .anyMatch(m -> m.getId().equals(correlativa.getId()));
+            
+            if (!correlativaAprobada) {
+                correlativasPendientes.add(correlativa);
+            }
+        }
+        return correlativasPendientes;
     }
     
     private void mostrarMateriasDisponiblesPorConsola(Estudiante estudiante, PlanDeEstudio plan) {

@@ -1,11 +1,16 @@
 package test;
 
-import Model.*;
 import Model.BuilderPlan.PlanBuild;
-import Model.EstadoState.*;
+import Model.Cursada;
+import Model.EstadoState.CursadaAprobada;
+import Model.EstadoState.ParcialAprobado;
+import Model.Estudiante;
 import Model.InscripcionStrategy.*;
+import Model.Materia;
+import Model.PlanDeEstudio;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class DirectorStrategyTest {

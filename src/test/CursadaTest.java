@@ -1,9 +1,13 @@
 package test;
 
-import Model.*;
-import Model.EstadoState.*;
+import Model.Cursada;
+import Model.EstadoState.EstadoCursada;
+import Model.EstadoState.ParcialDesaprobado;
+import Model.EstadoState.Promocionada;
+import Model.Materia;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class CursadaTest {

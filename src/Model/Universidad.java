@@ -7,9 +7,17 @@ public class Universidad {
     private List <Estudiante> estudiantes = new ArrayList();
     private List <Carrera> carreras = new ArrayList();
     private List<Materia> materias = new ArrayList<>();
+    private static Universidad universidad = null;
 
-    public Universidad() {
+    private Universidad() {
 
+    }
+
+    public static Universidad getInstance() {
+        if (universidad == null) {
+            universidad = new Universidad();
+        }
+        return universidad;
     }
 
 
@@ -25,12 +33,6 @@ public class Universidad {
         return materias;
     }
 
-    public Materia buscarMateriaPorId(Integer id) {
-        return materias.stream()
-                .filter(m -> m.getId().equals(id))
-                .findFirst()
-                .orElse(null);
-    }
 
     public void agregarEstudiante(Estudiante estudiante) {
         estudiantes.add(estudiante);
@@ -49,17 +51,6 @@ public class Universidad {
         carreras.remove(carrera);
     }
 
-    public void listarEstudiantes () {
-        for (Estudiante estudiante : estudiantes) {
-            System.out.println(estudiante);
-        }
-    }
-
-    public void listarCarreras () {
-        for (Carrera carrera : carreras) {
-            System.out.println(carrera);
-        }
-    }
 
 
     public Estudiante buscarEstudiante (Estudiante estudiante) {

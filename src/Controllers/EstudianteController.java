@@ -1,9 +1,11 @@
 package Controllers;
 
+import Exceptions.EstudianteException;
+import Exceptions.ValidacionException;
 import Model.*;
+
 import javax.swing.*;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Controlador para gestionar las operaciones relacionadas con estudiantes
@@ -52,44 +54,17 @@ public class EstudianteController {
     
     public void darAltaEstudiante() {
         try {
+            validarDatosAltaEstudiante();
+            
             String nombre = altaEstNombreJT.getText().trim();
             String apellido = altaEstApellidoJT.getText().trim();
             String dniStr = altaEstDniJT.getText().trim();
 
-            // Validar que los campos no estén vacíos
-            if (nombre.isEmpty() || apellido.isEmpty() || dniStr.isEmpty()) {
-                JOptionPane.showMessageDialog(null,
-                        "Todos los campos son obligatorios",
-                        "Error de validación",
-                        JOptionPane.ERROR_MESSAGE);
-                return;
-            }
-
-            // Validar que el DNI sea un número válido
-            long dni;
-            try {
-                dni = Long.parseLong(dniStr);
-                if (dni <= 0) {
-                    throw new NumberFormatException();
-                }
-            } catch (NumberFormatException e) {
-                JOptionPane.showMessageDialog(null,
-                        "El DNI debe ser un número positivo válido",
-                        "Error de validación",
-                        JOptionPane.ERROR_MESSAGE);
-                return;
-            }
+            long dni = Long.parseLong(dniStr);
 
             // Verificar si el estudiante ya existe
-            boolean estudianteExiste = universidad.getEstudiantes().stream()
-                    .anyMatch(e -> e.getDni() == dni);
-
-            if (estudianteExiste) {
-                JOptionPane.showMessageDialog(null,
-                        "Ya existe un estudiante con ese DNI",
-                        "Estudiante duplicado",
-                        JOptionPane.WARNING_MESSAGE);
-                return;
+            if (existeEstudianteConDni(dni)) {
+                throw new EstudianteException("Ya existe un estudiante con ese DNI");
             }
 
             // Crear el estudiante y agregarlo a la universidad
@@ -108,12 +83,53 @@ public class EstudianteController {
             // Mostrar en la consola
             consola.append("Estudiante agregado: " + nuevoEstudiante.toString() + "\n");
 
+        } catch (ValidacionException e) {
+            JOptionPane.showMessageDialog(null,
+                    e.getMessage(),
+                    "Error de validación",
+                    JOptionPane.ERROR_MESSAGE);
+        } catch (EstudianteException e) {
+            JOptionPane.showMessageDialog(null,
+                    e.getMessage(),
+                    "Estudiante duplicado",
+                    JOptionPane.WARNING_MESSAGE);
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null,
+                    "El DNI debe ser un número positivo válido",
+                    "Error de validación",
+                    JOptionPane.ERROR_MESSAGE);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null,
                     "Error al agregar estudiante: " + e.getMessage(),
                     "Error",
                     JOptionPane.ERROR_MESSAGE);
         }
+    }
+    
+    private void validarDatosAltaEstudiante() throws ValidacionException {
+        String nombre = altaEstNombreJT.getText().trim();
+        String apellido = altaEstApellidoJT.getText().trim();
+        String dniStr = altaEstDniJT.getText().trim();
+
+        // Validar que los campos no estén vacíos
+        if (nombre.isEmpty() || apellido.isEmpty() || dniStr.isEmpty()) {
+            throw new ValidacionException("Todos los campos son obligatorios");
+        }
+
+        // Validar que el DNI sea un número válido
+        try {
+            long dni = Long.parseLong(dniStr);
+            if (dni <= 0) {
+                throw new NumberFormatException();
+            }
+        } catch (NumberFormatException e) {
+            throw new ValidacionException("El DNI debe ser un número positivo válido");
+        }
+    }
+    
+    private boolean existeEstudianteConDni(long dni) {
+        return universidad.getEstudiantes().stream()
+                .anyMatch(e -> e.getDni() == dni);
     }
 
     public void limpiarCamposEstudiante() {
@@ -130,21 +146,11 @@ public class EstudianteController {
             Estudiante estudiante = (Estudiante) inscCarrEstudianteCB.getSelectedItem();
             Carrera carrera = (Carrera) inscCarrCarreraCB.getSelectedItem();
 
-            if (estudiante == null || carrera == null) {
-                JOptionPane.showMessageDialog(null,
-                        "Debe seleccionar un estudiante y una carrera",
-                        "Error de validación",
-                        JOptionPane.ERROR_MESSAGE);
-                return;
-            }
+            validarDatosInscripcionCarrera(estudiante, carrera);
 
             // Verificar si el estudiante ya está inscripto en una carrera
             if (estudiante.getCarrera() != null) {
-                JOptionPane.showMessageDialog(null,
-                        "El estudiante ya está inscripto en una carrera",
-                        "Error de inscripción",
-                        JOptionPane.WARNING_MESSAGE);
-                return;
+                throw new EstudianteException("El estudiante ya está inscripto en una carrera");
             }
 
             // Realizar la inscripción
@@ -158,11 +164,27 @@ public class EstudianteController {
             limpiarCamposInscripcionCarrera();
             consola.append("Estudiante inscripto a carrera: " + estudiante.toString() + " -> " + carrera.toString() + "\n");
 
+        } catch (ValidacionException e) {
+            JOptionPane.showMessageDialog(null,
+                    e.getMessage(),
+                    "Error de validación",
+                    JOptionPane.ERROR_MESSAGE);
+        } catch (EstudianteException e) {
+            JOptionPane.showMessageDialog(null,
+                    e.getMessage(),
+                    "Error de inscripción",
+                    JOptionPane.WARNING_MESSAGE);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null,
                     "Error al inscribir estudiante: " + e.getMessage(),
                     "Error",
                     JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
+    private void validarDatosInscripcionCarrera(Estudiante estudiante, Carrera carrera) throws ValidacionException {
+        if (estudiante == null || carrera == null) {
+            throw new ValidacionException("Debe seleccionar un estudiante y una carrera");
         }
     }
 
@@ -188,20 +210,10 @@ public class EstudianteController {
         try {
             Estudiante estudiante = (Estudiante) verFinEstudianteCB.getSelectedItem();
 
-            if (estudiante == null) {
-                JOptionPane.showMessageDialog(null,
-                        "Debe seleccionar un estudiante",
-                        "Error de validación",
-                        JOptionPane.ERROR_MESSAGE);
-                return;
-            }
+            validarDatosVerificacionCarrera(estudiante);
 
             if (estudiante.getCarrera() == null) {
-                JOptionPane.showMessageDialog(null,
-                        "El estudiante no está inscripto en ninguna carrera",
-                        "Error de verificación",
-                        JOptionPane.WARNING_MESSAGE);
-                return;
+                throw new EstudianteException("El estudiante no está inscripto en ninguna carrera");
             }
 
             PlanDeEstudio plan = estudiante.getCarrera().getPlanEstudio();
@@ -241,11 +253,27 @@ public class EstudianteController {
             consola.append("Verificación de carrera - Estudiante: " + estudiante.toString() +
                     " - Estado: " + (carreraFinalizada ? "FINALIZADA" : "EN CURSO") + "\n");
 
+        } catch (ValidacionException e) {
+            JOptionPane.showMessageDialog(null,
+                    e.getMessage(),
+                    "Error de validación",
+                    JOptionPane.ERROR_MESSAGE);
+        } catch (EstudianteException e) {
+            JOptionPane.showMessageDialog(null,
+                    e.getMessage(),
+                    "Error de verificación",
+                    JOptionPane.WARNING_MESSAGE);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null,
                     "Error al verificar estado: " + e.getMessage(),
                     "Error",
                     JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
+    private void validarDatosVerificacionCarrera(Estudiante estudiante) throws ValidacionException {
+        if (estudiante == null) {
+            throw new ValidacionException("Debe seleccionar un estudiante");
         }
     }
 

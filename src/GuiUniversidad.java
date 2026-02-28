@@ -1,8 +1,8 @@
-import Model.*;
-import Controllers.MateriaController;
-import Controllers.EstudianteController;
 import Controllers.CarreraController;
 import Controllers.CursadaController;
+import Controllers.EstudianteController;
+import Controllers.MateriaController;
+import Model.Universidad;
 
 import javax.swing.*;
 
@@ -67,7 +67,7 @@ public class GuiUniversidad {
 
     public GuiUniversidad() {
 
-        universidad = new Universidad();
+        universidad = Universidad.getInstance();
         materiaController = new MateriaController(universidad, Consola);
         estudianteController = new EstudianteController(universidad, Consola);
         carreraController = new CarreraController(universidad, Consola);

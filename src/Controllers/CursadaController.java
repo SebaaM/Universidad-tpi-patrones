@@ -1,7 +1,8 @@
 package Controllers;
 
-import Model.*;
-import Model.EstadoState.*;
+import Model.Cursada;
+import Model.Estudiante;
+import Model.Materia;
 
 public class CursadaController {
     

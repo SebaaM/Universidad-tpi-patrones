@@ -1,7 +1,6 @@
 package Model;
 
 import Model.BuilderPlan.Builder;
-import Model.BuilderPlan.PlanBuild;
 import Model.InscripcionStrategy.CondicionInscripcion;
 import Model.InscripcionStrategy.DirectorStrategy;
 

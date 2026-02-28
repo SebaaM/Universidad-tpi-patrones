@@ -4,17 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d02309d3-7c2a-4564-a3da-62178968c33e" name="Changes" comment="Cambio de font en consola">
+    <list default="true" id="d02309d3-7c2a-4564-a3da-62178968c33e" name="Changes" comment="se agrego Excepciones de validacion.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/CursadaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/CursadaController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TPI-OBJETOS/GuiUniversidad.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TPI-OBJETOS/GuiUniversidad.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/EstadoState/CursadaDesaprobada.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/EstadoState/CursadaDesaprobada.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/EstadoState/ParcialDesaprobado.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/EstadoState/ParcialDesaprobado.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/EstadoState/Promocionada.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/EstadoState/Promocionada.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/Universidad.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/Universidad.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/CarreraController.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/CarreraController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/CarreraController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/CarreraController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controllers/EstudianteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/EstudianteController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/EstudianteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/EstudianteController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controllers/MateriaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/MateriaController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controllers/MateriaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/MateriaController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GuiUniversidad.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/GuiUniversidad.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/EstadoState/Inscripto.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/EstadoState/Inscripto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/EstadoState/ParcialAprobado.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/EstadoState/ParcialAprobado.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Materia.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Materia.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GuiUniversidad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GuiUniversidad.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/EstadoState/CursadaDesaprobada.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/EstadoState/CursadaDesaprobada.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/EstadoState/CursadaDesaprobada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/EstadoState/CursadaDesaprobada.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/EstadoState/ParcialDesaprobado.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/EstadoState/ParcialDesaprobado.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/EstadoState/ParcialDesaprobado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/EstadoState/ParcialDesaprobado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/EstadoState/Promocionada.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/EstadoState/Promocionada.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/EstadoState/Promocionada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/EstadoState/Promocionada.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Universidad.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Universidad.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Universidad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Universidad.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PrecargaMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/PrecargaMain.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PrecargaMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PrecargaMain.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +128,7 @@
       <recent name="Model" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CursadaTest">
+  <component name="RunManager" selected="Application.GuiUniversidad">
     <configuration name="CursadaController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Controllers.CursadaController" />
       <module name="TPI-OBJETOS" />
@@ -190,8 +204,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CursadaTest" />
         <item itemvalue="Application.GuiUniversidad" />
+        <item itemvalue="JUnit.CursadaTest" />
         <item itemvalue="JUnit.DirectorStrategyTest" />
         <item itemvalue="JUnit.DirectorStrategyTest.revisarInscripcion" />
         <item itemvalue="Application.CursadaController" />
@@ -446,7 +460,23 @@
       <option name="project" value="LOCAL" />
       <updated>1772163541412</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Se agrego materias permitidas a cursar de un estudiante, solo salida por consola.">
+      <option name="closed" value="true" />
+      <created>1772201905645</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1772201905645</updated>
+    </task>
+    <task id="LOCAL-00032" summary="se agrega readme">
+      <option name="closed" value="true" />
+      <created>1772201919264</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1772201919264</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -473,8 +503,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Se agrego logica y cambios de estados del patron State." />
-    <MESSAGE value="se ajustaron los metodos que no se utilizan segun el modelo de clases" />
     <MESSAGE value="se agrego la condicion de aprobado de final" />
     <MESSAGE value="reestructuracion de la interfaz CondicionInscripcion" />
     <MESSAGE value="implementacion de Strategy" />
@@ -498,7 +526,9 @@
     <MESSAGE value="se corrigio las vista de materias en inscripcion de estudiante." />
     <MESSAGE value="Se agrego testing utilizando Junit 5.&#10;Testeo de partes criticas del sistema: State y Strategy." />
     <MESSAGE value="Cambio de font en consola" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cambio de font en consola" />
+    <MESSAGE value="Se agrego materias permitidas a cursar de un estudiante, solo salida por consola." />
+    <MESSAGE value="se agrega readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="se agrega readme" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -1,8 +1,13 @@
 package Controllers;
 
-import Model.*;
+import Exceptions.ValidacionException;
 import Model.BuilderPlan.PlanBuild;
+import Model.Carrera;
 import Model.InscripcionStrategy.*;
+import Model.Materia;
+import Model.PlanDeEstudio;
+import Model.Universidad;
+
 import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -64,67 +69,22 @@ public class CarreraController {
             String idStr = crearPlIDJT.getText().trim();
             String cantOptStr = crearPlCantOpcJT.getText().trim();
 
-            // Validar campos obligatorios
-            if (nombreCarrera.isEmpty() || idStr.isEmpty() || cantOptStr.isEmpty()) {
-                JOptionPane.showMessageDialog(null,
-                        "Todos los campos son obligatorios",
-                        "Error de validación",
-                        JOptionPane.ERROR_MESSAGE);
-                return;
-            }
+            // Validar datos básicos
+            validarDatosCrearPlan(nombreCarrera, idStr, cantOptStr);
 
             // Obtener selecciones de materias
             List<Materia> seleccionadasObligatorias = obtenerSeleccionadasObligatorias();
             List<Materia> seleccionadasOptativas = obtenerSeleccionadasOptativas();
 
-            // Validar que haya materias seleccionadas
-            if (seleccionadasObligatorias.isEmpty() && seleccionadasOptativas.isEmpty()) {
-                JOptionPane.showMessageDialog(null,
-                        "Debe seleccionar al menos una materia (obligatoria u optativa)",
-                        "Error de validación",
-                        JOptionPane.ERROR_MESSAGE);
-                return;
-            }
+            // Validar selecciones de materias
+            validarSeleccionesMaterias(seleccionadasObligatorias, seleccionadasOptativas);
 
-            // Validar que no haya superposición entre obligatorias y optativas
-            for (Materia materia : seleccionadasObligatorias) {
-                if (seleccionadasOptativas.contains(materia)) {
-                    JOptionPane.showMessageDialog(null,
-                            "La materia '" + materia.getNombre() + "' no puede ser obligatoria y optativa al mismo tiempo",
-                            "Error de validación",
-                            JOptionPane.ERROR_MESSAGE);
-                    return;
-                }
-            }
-
-            // Parsear datos numéricos con validación
-            Integer id;
-            int cantOptativas;
-            try {
-                id = Integer.parseInt(idStr);
-                if (id <= 0) {
-                    throw new NumberFormatException();
-                }
-                cantOptativas = Integer.parseInt(cantOptStr);
-                if (cantOptativas < 0) {
-                    throw new NumberFormatException();
-                }
-            } catch (NumberFormatException e) {
-                JOptionPane.showMessageDialog(null,
-                        "El ID debe ser un número positivo y la cantidad de optativas debe ser un número válido",
-                        "Error de validación",
-                        JOptionPane.ERROR_MESSAGE);
-                return;
-            }
-
-            // Validar que la cantidad de optativas no sea mayor que las optativas seleccionadas
-            if (cantOptativas > seleccionadasOptativas.size()) {
-                JOptionPane.showMessageDialog(null,
-                        "La cantidad de optativas requeridas no puede ser mayor que las optativas seleccionadas",
-                        "Error de validación",
-                        JOptionPane.ERROR_MESSAGE);
-                return;
-            }
+            // Parsear datos numéricos
+            Integer id = Integer.parseInt(idStr);
+            int cantOptativas = Integer.parseInt(cantOptStr);
+            
+            // Validar datos numéricos
+            validarDatosNumericos(id, cantOptativas, seleccionadasOptativas.size());
 
             // Obtener estrategia seleccionada
             String estrategiaSeleccionada = (String) crearPlEstrategiaCB.getSelectedItem();
@@ -172,11 +132,57 @@ public class CarreraController {
             consola.append("  - Materias optativas: " + seleccionadasOptativas.size() + "\n");
             consola.append("  - Optativas requeridas: " + cantOptativas + "\n");
 
+        } catch (ValidacionException e) {
+            JOptionPane.showMessageDialog(null,
+                    e.getMessage(),
+                    "Error de validación",
+                    JOptionPane.ERROR_MESSAGE);
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null,
+                    "El ID debe ser un número positivo y la cantidad de optativas debe ser un número válido",
+                    "Error de validación",
+                    JOptionPane.ERROR_MESSAGE);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null,
                     "Error al crear carrera: " + e.getMessage(),
                     "Error",
                     JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
+    private void validarDatosCrearPlan(String nombreCarrera, String idStr, String cantOptStr) throws ValidacionException {
+        // Validar campos obligatorios
+        if (nombreCarrera.isEmpty() || idStr.isEmpty() || cantOptStr.isEmpty()) {
+            throw new ValidacionException("Todos los campos son obligatorios");
+        }
+    }
+    
+    private void validarSeleccionesMaterias(List<Materia> seleccionadasObligatorias, List<Materia> seleccionadasOptativas) throws ValidacionException {
+        // Validar que haya materias seleccionadas
+        if (seleccionadasObligatorias.isEmpty() && seleccionadasOptativas.isEmpty()) {
+            throw new ValidacionException("Debe seleccionar al menos una materia (obligatoria u optativa)");
+        }
+
+        // Validar que no haya superposición entre obligatorias y optativas
+        for (Materia materia : seleccionadasObligatorias) {
+            if (seleccionadasOptativas.contains(materia)) {
+                throw new ValidacionException("La materia '" + materia.getNombre() + "' no puede ser obligatoria y optativa al mismo tiempo");
+            }
+        }
+    }
+    
+    private void validarDatosNumericos(Integer id, int cantOptativas, int cantidadOptativasSeleccionadas) throws ValidacionException {
+        if (id <= 0) {
+            throw new ValidacionException("El ID debe ser un número positivo");
+        }
+        
+        if (cantOptativas < 0) {
+            throw new ValidacionException("La cantidad de optativas debe ser un número válido");
+        }
+        
+        // Validar que la cantidad de optativas no sea mayor que las optativas seleccionadas
+        if (cantOptativas > cantidadOptativasSeleccionadas) {
+            throw new ValidacionException("La cantidad de optativas requeridas no puede ser mayor que las optativas seleccionadas");
         }
     }
 

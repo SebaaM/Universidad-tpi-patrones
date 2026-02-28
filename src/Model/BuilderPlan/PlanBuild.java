@@ -4,8 +4,6 @@ import Model.InscripcionStrategy.CondicionInscripcion;
 import Model.Materia;
 import Model.PlanDeEstudio;
 
-import java.util.List;
-
 public class PlanBuild implements Builder {
 
     private PlanDeEstudio plan;

@@ -1,7 +1,10 @@
-import Model.*;
 import Model.BuilderPlan.PlanBuild;
-import Model.InscripcionStrategy.*;
-import Model.EstadoState.*;
+import Model.*;
+import Model.EstadoState.CursadaAprobada;
+import Model.EstadoState.Inscripto;
+import Model.InscripcionStrategy.CondicionA;
+import Model.InscripcionStrategy.CondicionB;
+import Model.InscripcionStrategy.CondicionC;
 
 import javax.swing.*;
 import java.util.ArrayList;
@@ -259,7 +262,7 @@ public class PrecargaMain {
 
     public static void main(String[] args) {
         // Para testing independiente
-        Universidad uni = new Universidad();
+        Universidad uni = Universidad.getInstance();
         JTextArea consola = new JTextArea();
         
         precargarDatos(uni, consola);
