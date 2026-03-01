@@ -19,6 +19,12 @@ src/
 │   ├── EstudianteController.java
 │   ├── MateriaController.java
 │   └── CursadaController.java
+├── Exceptions/           # Manejo de excepciones personalizadas
+│   ├── UniversidadException.java
+│   ├── CarreraException.java
+│   ├── EstudianteException.java
+│   ├── MateriaException.java
+│   └── ValidacionException.java
 ├── Model/               # Modelo de datos
 │   ├── Universidad.java
 │   ├── Carrera.java
@@ -31,6 +37,7 @@ src/
 │   └── BuilderPlan/     # Patrón Builder
 ├── GuiUniversidad.java  # Interfaz gráfica principal
 ├── GuiUniversidad.form  # Configuración de UI
+├── PrecargaMain.java    # Clase de precarga de datos de ejemplo
 └── test/               # Pruebas unitarias
 ```
 
@@ -44,7 +51,6 @@ src/
 ### Dependencias:
 - jgoodies-forms-1.9.0.jar - Framework para formularios Swing
 - jgoodies-common-1.8.1.jar - Utilidades comunes de JGoodies
-- Bibliotecas estándar de Java
 
 
 ## 🎮 Uso del Sistema
@@ -64,8 +70,40 @@ src/
 - **Filtrado inteligente**: Solo se muestran opciones relevantes
 
 
+### Manejo de Excepciones:
+Sistema robusto de manejo de errores con excepciones personalizadas:
+- **UniversidadException**: Clase base para excepciones del sistema
+- **CarreraException**: Errores específicos de operaciones de carreras
+- **EstudianteException**: Validaciones de datos de estudiantes
+- **MateriaException**: Gestión de errores de materias
+- **ValidacionException**: Errores de validación de datos de entrada
 
-## 👥 Desarrollo y Contribución
+##  Pruebas Unitarias
+
+### Suite de Tests Implementados:
+El sistema incluye un conjunto completo de pruebas unitarias utilizando JUnit 5:
+
+#### CursadaTest.java:
+Valida el funcionamiento del patrón **State** en la gestión de cursadas:
+- **cargarParcial()**: Verifica transiciones de estados al cargar notas de parciales
+- **cargarNotaFinal()**: Testea la carga de notas finales según estado
+- **finalizarCursada()**: Comprueba la finalización correcta de cursadas
+- **isCursadaAprobada()**: Valida el estado de aprobación de cursadas
+- **isCursadaAprobadaTotal()**: Verifica la aprobación completa (cursada + final)
+- **setEstado()**: Testea cambios manuales de estado
+
+#### DirectorStrategyTest.java:
+Valida el funcionamiento del patrón **Strategy** en inscripciones:
+- **revisarInscripcion()**: Comprueba las 5 condiciones de inscripción (CondiciónA-E)
+- Validación de correlativas y cuatrimestres
+- Verificación de estrategias según estado académico del estudiante
+
+### Cobertura de Pruebas:
+- **Patrón State**: 6 métodos testeados con múltiples escenarios
+- **Patrón Strategy**: Validación de todas las condiciones de inscripción
+- **Transiciones de estado**: Verificación completa de flujos académicos
+- **Validaciones**: Testeo de casos límite y condiciones borde
+
 
 ### Arquitectura MVC:
 - **Model**: Clases de dominio y lógica de negocio
