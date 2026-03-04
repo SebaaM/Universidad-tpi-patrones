@@ -1,34 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="TPI-OBJETOS:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d02309d3-7c2a-4564-a3da-62178968c33e" name="Changes" comment="se agrego Excepciones de validacion.">
+    <list default="true" id="d02309d3-7c2a-4564-a3da-62178968c33e" name="Changes" comment="actualizacion de readme">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TPI-OBJETOS.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TPI-OBJETOS.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TPI-OBJETOS/GuiUniversidad.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TPI-OBJETOS/GuiUniversidad.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/EstadoState/CursadaDesaprobada.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/EstadoState/CursadaDesaprobada.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/EstadoState/ParcialDesaprobado.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/EstadoState/ParcialDesaprobado.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/EstadoState/Promocionada.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/EstadoState/Promocionada.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/Universidad.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/Universidad.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/CarreraController.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/CarreraController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/CarreraController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/CarreraController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/EstudianteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/EstudianteController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/EstudianteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/EstudianteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/MateriaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/MateriaController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/PlanDeEstudio.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TPI-OBJETOS/Model/PlanDeEstudio.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controllers/MateriaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/MateriaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GuiUniversidad.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/GuiUniversidad.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GuiUniversidad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GuiUniversidad.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/EstadoState/CursadaDesaprobada.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/EstadoState/CursadaDesaprobada.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/EstadoState/CursadaDesaprobada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/EstadoState/CursadaDesaprobada.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/EstadoState/ParcialDesaprobado.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/EstadoState/ParcialDesaprobado.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/EstadoState/ParcialDesaprobado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/EstadoState/ParcialDesaprobado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/EstadoState/Promocionada.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/EstadoState/Promocionada.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/EstadoState/Promocionada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/EstadoState/Promocionada.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Universidad.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Universidad.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Universidad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Universidad.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PrecargaMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/PrecargaMain.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PrecargaMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PrecargaMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GuiUniversidad.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/GuiUniversidad.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/PlanDeEstudio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/PlanDeEstudio.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +100,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propCompiler&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -476,7 +464,23 @@
       <option name="project" value="LOCAL" />
       <updated>1772201919264</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="optimizaconi de imports, se agrego singleton de universidad. &#10;se implementarion metodos de validacion para excepciones.">
+      <option name="closed" value="true" />
+      <created>1772318051124</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1772318051124</updated>
+    </task>
+    <task id="LOCAL-00034" summary="actualizacion de readme">
+      <option name="closed" value="true" />
+      <created>1772325691033</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1772325691033</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -503,9 +507,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="se agrego la condicion de aprobado de final" />
-    <MESSAGE value="reestructuracion de la interfaz CondicionInscripcion" />
-    <MESSAGE value="implementacion de Strategy" />
     <MESSAGE value="implementacion del Interfaz Visual: Alta Estudiante, Alta Materia.&#10;implementacion base de Inscripcion de materia, e incripcion de carrera." />
     <MESSAGE value="implementacion del Interfaz Visual Completa, falta logica de botones." />
     <MESSAGE value="xml" />
@@ -528,7 +529,10 @@
     <MESSAGE value="Cambio de font en consola" />
     <MESSAGE value="Se agrego materias permitidas a cursar de un estudiante, solo salida por consola." />
     <MESSAGE value="se agrega readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="se agrega readme" />
+    <MESSAGE value="se agrego Excepciones de validacion." />
+    <MESSAGE value="optimizaconi de imports, se agrego singleton de universidad. &#10;se implementarion metodos de validacion para excepciones." />
+    <MESSAGE value="actualizacion de readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="actualizacion de readme" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

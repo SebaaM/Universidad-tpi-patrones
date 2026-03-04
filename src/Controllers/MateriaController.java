@@ -185,14 +185,26 @@ public class MateriaController {
                 throw new MateriaException("El estudiante ya está inscripto en esta materia");
             }
 
-            // Verificar correlativas
-            List<Materia> correlativasPendientes = obtenerCorrelativasPendientes(estudiante, materia);
-            if (!correlativasPendientes.isEmpty()) {
-                throw new MateriaException("No cumple con las correlativas: " + 
-                    correlativasPendientes.stream()
-                        .map(Materia::getNombre)
-                        .reduce((a, b) -> a + ", " + b)
-                        .orElse(""));
+            // Verificar condiciones de inscripción usando el patrón Strategy
+            boolean cumpleCondiciones = estudiante.getCarrera().getPlanEstudio()
+                .getCondicionInscripcion().revisarCondicion(
+                    estudiante.getCarrera().getPlanEstudio(), 
+                    materia, 
+                    estudiante
+                );
+            
+            if (!cumpleCondiciones) {
+                // Mostrar detalles de correlativas pendientes si aplica
+                List<Materia> correlativasPendientes = obtenerCorrelativasPendientes(estudiante, materia);
+                if (!correlativasPendientes.isEmpty()) {
+                    throw new MateriaException("No cumple con las condiciones de inscripción. Correlativas pendientes: " + 
+                        correlativasPendientes.stream()
+                            .map(Materia::getNombre)
+                            .reduce((a, b) -> a + ", " + b)
+                            .orElse(""));
+                } else {
+                    throw new MateriaException("No cumple con las condiciones de inscripción requeridas");
+                }
             }
 
             // Realizar la inscripción
@@ -376,18 +388,12 @@ public class MateriaController {
             return false;
         }
 
-        // Verificar correlativas
-        for (Materia correlativa : materia.getCorrelativas()) {
-            boolean correlativaAprobada = estudiante.getCursadasInscriptas().stream()
-                    .filter(c -> c.isCursadaAprobadaTotal())
-                    .map(Cursada::getMateria)
-                    .anyMatch(m -> m.getId().equals(correlativa.getId()));
-            
-            if (!correlativaAprobada) {
-                return false;
-            }
-        }
-
-        return true;
+        // patron strategy para verificar la condicion de inscripcion.
+        return estudiante.getCarrera().getPlanEstudio()
+            .getCondicionInscripcion().revisarCondicion(
+                estudiante.getCarrera().getPlanEstudio(), 
+                materia, 
+                estudiante
+            );
     }
 }
